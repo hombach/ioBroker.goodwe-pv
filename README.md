@@ -46,6 +46,10 @@ This adapter is based on [ioBroker.goodwe](https://github.com/FossyTom/ioBroker.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS**
+
+* (hombach) refactored to TypeScript
+
 ### 0.0.1 (2026-06-14)
 
 * (hombach) initial release based on ioBroker.goodwe by FossyTom
