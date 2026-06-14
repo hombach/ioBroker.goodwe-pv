@@ -37,9 +37,6 @@ web_modules/
 # TypeScript cache
 *.tsbuildinfo
 
-# TypeScript build output
-build/
-
 # Optional npm cache directory
 .npm
 
@@ -79,6 +76,7 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+.vscode
 .idea
 
 # yarn v2
