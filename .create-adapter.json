@@ -40,7 +40,7 @@
 	"authorEmail": "goodwePV@homba.ch",
 	"gitRemoteProtocol": "SSH",
 	"gitCommit": "yes",
-	"defaultBranch": "main",
+	"defaultBranch": "master",
 	"license": "MIT License",
 	"dependabot": "yes",
 	"creatorVersion": "2.3.0"

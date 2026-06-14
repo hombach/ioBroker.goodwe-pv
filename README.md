@@ -1,48 +1,32 @@
-![Logo](admin/goodwe.png)
-# ioBroker.goodwe
+![Logo](admin/goodwePV.png)
+# ioBroker.goodwePV
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.goodwe.svg)](https://www.npmjs.com/package/iobroker.goodwe)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.goodwe.svg)](https://www.npmjs.com/package/iobroker.goodwe)
-![Number of Installations](https://iobroker.live/badges/goodwe-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/goodwe-stable.svg)
+[![NPM version](https://img.shields.io/npm/v/iobroker.goodwePV.svg)](https://www.npmjs.com/package/iobroker.goodwePV)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.goodwePV.svg)](https://www.npmjs.com/package/iobroker.goodwePV)
 
-[![NPM](https://nodei.co/npm/iobroker.goodwe.png?downloads=true)](https://nodei.co/npm/iobroker.goodwe/)
+**Tests:** ![Test and Release](https://github.com/hombach/ioBroker.goodwePV/workflows/Test%20and%20Release/badge.svg)
 
-**Tests:** ![Test and Release](https://github.com/FossyTom/ioBroker.goodwe/workflows/Test%20and%20Release/badge.svg)
-
-## goodwe adapter for ioBroker
+## goodwePV adapter for ioBroker
 
 Communication with GoodWe Inverter ET/EH/BH/BT Series
 
+## Based on
 
+This adapter is based on [ioBroker.goodwe](https://github.com/FossyTom/ioBroker.goodwe) by [FossyTom](https://github.com/FossyTom) (Thomas Schönberger), licensed under MIT.
 
 ## Changelog
 <!--
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### 1.0.4 (2023-02-19)
-* (Thomas Schönberger) Add some Logs for ENETUNREACH error
-
-### 1.0.3 (2023-02-18)
-
-* (Thomas Schönberger) Add TotalPowerPv object to running Data
-* (Thomas Schönberger) Comm Error
-
-### 1.0.2 (2022-12-31)
-
-* (Thomas Schönberger) Add Bluefox to npm
-
-### 1.0.1 (2022-12-31)
-* (Thomas Schönberger) initial release
-
-### 1.0.0 (2022-12-31)
-* (Thomas Schönberger) initial release
+### 0.0.1 (2024)
+* (hombach) initial release based on ioBroker.goodwe by FossyTom
 
 ## License
 MIT License
 
-Copyright (c) 2023 Thomas Schönberger <SchoenbergerThomas@freenet.de>
+Copyright (c) 2024 hombach <goodwePV@homba.ch>
+Copyright (c) 2023 Thomas Schönberger <SchoenbergerThomas@freenet.de> (original ioBroker.goodwe)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
