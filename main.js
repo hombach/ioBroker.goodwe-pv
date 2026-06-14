@@ -9,10 +9,12 @@
 const utils = require("@iobroker/adapter-core");
 const goodWe = require("./GoodWe/GoodWe");
 
-let tmr_timeout = null;
+/** @type {ioBroker.Timeout | undefined} */
+let tmr_timeout;
 
 class Goodwe extends utils.Adapter {
 	inverter = new goodWe.GoodWeUdp();
+	/** @type {ioBroker.Timeout | undefined} */
 	interval;
 	cycleCnt = 0;
 
@@ -49,11 +51,11 @@ class Goodwe extends utils.Adapter {
 		this.myTimer();
 
 		// examples for the checkPassword/checkGroup functions
-		let result = await this.checkPasswordAsync("admin", "iobroker");
-		this.log.info(`check user admin pw iobroker: ${result}`);
+		const pwResult = await this.checkPasswordAsync("admin", "iobroker");
+		this.log.info(`check user admin pw iobroker: ${pwResult}`);
 
-		result = await this.checkGroupAsync("admin", "admin");
-		this.log.info(`check group user admin group admin: ${result}`);
+		const groupResult = await this.checkGroupAsync("admin", "admin");
+		this.log.info(`check group user admin group admin: ${groupResult}`);
 	}
 
 	/**
@@ -211,6 +213,10 @@ class Goodwe extends utils.Adapter {
 		this.CreateObjectStateNumber("BMSInfo", "BatteryStrings");
 	}
 
+	/**
+	 * @param {string} Path Channel path
+	 * @param {string} Name State name
+	 */
 	CreateObjectStateNumber(Path, Name) {
 		this.setObjectNotExistsAsync(`${Path}.${Name}`, {
 			type: "state",
@@ -225,6 +231,10 @@ class Goodwe extends utils.Adapter {
 		});
 	}
 
+	/**
+	 * @param {string} Path Channel path
+	 * @param {string} Name State name
+	 */
 	CreateObjectStateString(Path, Name) {
 		this.setObjectNotExistsAsync(`${Path}.${Name}`, {
 			type: "state",
@@ -239,6 +249,10 @@ class Goodwe extends utils.Adapter {
 		});
 	}
 
+	/**
+	 * @param {string} Path Channel path
+	 * @param {string} Name Channel name
+	 */
 	CreateObjectsDcParameters(Path, Name) {
 		this.setObjectNotExistsAsync(`${Path}.${Name}`, {
 			type: "channel",
@@ -295,6 +309,10 @@ class Goodwe extends utils.Adapter {
 		});
 	}
 
+	/**
+	 * @param {string} Path Channel path
+	 * @param {string} Name Channel name
+	 */
 	CreateObjectsAcPhase(Path, Name) {
 		this.setObjectNotExistsAsync(`${Path}.${Name}`, {
 			type: "channel",
@@ -351,6 +369,10 @@ class Goodwe extends utils.Adapter {
 		});
 	}
 
+	/**
+	 * @param {string} Path Channel path
+	 * @param {string} Name Channel name
+	 */
 	CreateObjectsPhaseBackUp(Path, Name) {
 		this.setObjectNotExistsAsync(`${Path}.${Name}`, {
 			type: "channel",
@@ -419,6 +441,10 @@ class Goodwe extends utils.Adapter {
 		});
 	}
 
+	/**
+	 * @param {string} Path Channel path
+	 * @param {string} Name Channel name
+	 */
 	CreateObjectMeterPhase(Path, Name) {
 		this.setObjectNotExistsAsync(`${Path}.${Name}`, {
 			type: "channel",
