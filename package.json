@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "iobroker.goodwePV",
   "version": "0.0.1",
   "description": "Communication with GoodWe Inverter ET/EH/BH/BT Series",
@@ -30,7 +30,7 @@
     "@alcalzone/release-script": "^3.5.9",
     "@alcalzone/release-script-plugin-iobroker": "^3.5.9",
     "@alcalzone/release-script-plugin-license": "^3.5.9",
-    "@alcalzone/release-script-plugin-manual-review": "^3.5.9",
+    "@alcalzone/release-script-plugin-manual-review": "^5.2.0",
     "@iobroker/adapter-dev": "^1.2.0",
     "@iobroker/testing": "^4.1.0",
     "@tsconfig/node22": "^22.0.5",
