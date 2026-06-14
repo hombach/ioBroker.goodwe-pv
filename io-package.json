@@ -1,0 +1,113 @@
+{
+  "common": {
+    "name": "goodwePV",
+    "version": "0.0.1",
+    "news": {
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版",
+        "uk": "початковий випуск"
+      }
+    },
+    "title": "GoodWe PV",
+    "titleLang": {
+      "en": "GoodWe PV",
+      "de": "GoodWe PV",
+      "ru": "GoodWe PV",
+      "pt": "GoodWe PV",
+      "nl": "GoodWe PV",
+      "fr": "GoodWe PV",
+      "it": "GoodWe PV",
+      "es": "GoodWe PV",
+      "pl": "GoodWe PV",
+      "zh-cn": "GoodWe PV",
+      "uk": "GoodWe PV"
+    },
+    "desc": {
+      "en": "Communication with GoodWe Inverter ET/EH/BH/BT Series",
+      "de": "Kommunikation mit GoodWe Inverter ET/EH/BH/BT-Serie",
+      "ru": "Связь с инвертором GoodWe серии ET/EH/BH/BT",
+      "pt": "Comunicação com GoodWe Inverter Série ET/EH/BH/BT",
+      "nl": "Communicatie met GoodWe Inverter ET/EH/BH/BT-serie",
+      "fr": "Communication avec les séries GoodWe Inverter ET/EH/BH/BT",
+      "it": "Comunicazione con inverter GoodWe serie ET/EH/BH/BT",
+      "es": "Comunicación con inversor GoodWe serie ET/EH/BH/BT",
+      "pl": "Komunikacja z falownikami GoodWe serii ET/EH/BH/BT",
+      "zh-cn": "与固德威变频器ET/EH/BH/BT系列通讯",
+      "uk": "Зв'язок із інверторами GoodWe серії ET/EH/BH/BT"
+    },
+    "authors": [
+      "hombach <goodwePV@homba.ch>"
+    ],
+    "keywords": [
+      "GoodWe",
+      "Inverter",
+      "ET",
+      "EH",
+      "BH",
+      "BT"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "goodwePV.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/hombach/ioBroker.goodwePV/main/admin/goodwePV.png",
+    "readme": "https://github.com/hombach/ioBroker.goodwePV/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "energy",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=3.3.22"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=5.1.13"
+      }
+    ]
+  },
+  "native": {
+    "ipAddr": "127.0.0.1",
+    "pollCycle": 10
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
+}
