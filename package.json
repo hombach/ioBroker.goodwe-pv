@@ -4,9 +4,9 @@
   "description": "Communication with GoodWe Inverter ET/EH/BH/BT Series",
   "author": {
     "name": "hombach",
-    "email": "goodwePV@homba.ch"
+    "email": "goodwe-pv@homba.ch"
   },
-  "homepage": "https://github.com/hombach/ioBroker.goodwePV",
+  "homepage": "https://github.com/hombach/ioBroker.goodwe-pv",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:hombach/ioBroker.goodwePV.git"
+    "url": "git@github.com:hombach/ioBroker.goodwe-pv.git"
   },
   "engines": {
     "node": ">= 22.18.0"
@@ -79,7 +79,7 @@
     "release": "release-script"
   },
   "bugs": {
-    "url": "https://github.com/hombach/ioBroker.goodwePV/issues"
+    "url": "https://github.com/hombach/ioBroker.goodwe-pv/issues"
   },
   "readmeFilename": "README.md"
 }
