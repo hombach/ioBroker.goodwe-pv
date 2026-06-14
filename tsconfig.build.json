@@ -5,7 +5,6 @@
 		"allowJs": false,
 		"checkJs": false,
 		"noEmit": false,
-		"allowImportingTsExtensions": false,
 		"declaration": false,
 		"rootDir": "./src",
 		"outDir": "./build"
