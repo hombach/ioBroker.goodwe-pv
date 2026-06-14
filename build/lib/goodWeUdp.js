@@ -364,10 +364,11 @@ class GoodWeUdp {
     getIntFromByteArray(data, start, length) {
         let value = 0;
         for (let i = 0; i < length; i++) {
-            value = (value << 8) + data[start + i];
+            value = value * 256 + data[start + i];
         }
-        if ((value & 0x8000) === 0x8000) {
-            value = ((value ^ 0xffff) + 1) * -1;
+        const halfRange = 2 ** (length * 8 - 1);
+        if (value >= halfRange) {
+            value -= halfRange * 2;
         }
         return value;
     }
