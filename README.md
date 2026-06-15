@@ -54,6 +54,8 @@ This adapter is based on [ioBroker.goodwe](https://github.com/FossyTom/ioBroker.
 
 * (hombach) initial release based on ioBroker.goodwe by FossyTom
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 MIT License
 
