@@ -57,6 +57,8 @@ Copyright (c) 2023 Thomas Schönberger <SchoenbergerThomas@freenet.de> (original
 
 - (hombach) initial release based on ioBroker.goodwe by FossyTom
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 MIT License
 
