@@ -70,20 +70,20 @@ class Goodwe extends utils.Adapter {
 	private async updateDeviceInfo(): Promise<void> {
 		this.inverter.ReadDeviceInfo();
 		const di = this.inverter.DeviceInfo;
-		await this.projectUtils.checkAndSetChannel("DeviceInfo", "DeviceInfo");
-		await this.projectUtils.checkAndSetValueNumber("DeviceInfo.ModbusProtocolVersion", di.ModbusProtocolVersion);
-		await this.projectUtils.checkAndSetValueNumber("DeviceInfo.RatedPower", di.RatedPower);
-		await this.projectUtils.checkAndSetValueNumber("DeviceInfo.AcOutputType", di.AcOutputType);
-		await this.projectUtils.checkAndSetValue("DeviceInfo.SerialNumber", di.SerialNumber);
-		await this.projectUtils.checkAndSetValue("DeviceInfo.DeviceType", di.DeviceType);
-		await this.projectUtils.checkAndSetValueNumber("DeviceInfo.DSP1_SW_Version", di.DSP1_SoftwareVersion);
-		await this.projectUtils.checkAndSetValueNumber("DeviceInfo.DSP2_SW_Version", di.DSP2_SoftwareVersion);
-		await this.projectUtils.checkAndSetValueNumber("DeviceInfo.DSP_SVN_Version", di.DSP_SVN_Version);
-		await this.projectUtils.checkAndSetValueNumber("DeviceInfo.ARM_SW_Version", di.ARM_SoftwareVersion);
-		await this.projectUtils.checkAndSetValueNumber("DeviceInfo.ARM_SVN_Version", di.ARM_SVN_Version);
-		await this.projectUtils.checkAndSetValue("DeviceInfo.DSP_Int_FW_Version", di.DSP_IntFirmwareVersion);
-		await this.projectUtils.checkAndSetValue("DeviceInfo.ARM_Int_FW_Version", di.ARM_IntFirmwareVersion);
-		void this.setStateAsync("info.connection", this.inverter.Status, true);
+		await this.projectUtils.checkAndSetChannel(`DeviceInfo`, `DeviceInfo`, `goodwe-pv.png`);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.ModbusProtocolVersion`, di.ModbusProtocolVersion);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.RatedPower`, di.RatedPower, `Rated Power`, `W`);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.AcOutputType`, di.AcOutputType);
+		void this.projectUtils.checkAndSetValue(`DeviceInfo.SerialNumber`, di.SerialNumber);
+		void this.projectUtils.checkAndSetValue(`DeviceInfo.DeviceType`, di.DeviceType);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.DSP1_SW_Version`, di.DSP1_SoftwareVersion);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.DSP2_SW_Version`, di.DSP2_SoftwareVersion);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.DSP_SVN_Version`, di.DSP_SVN_Version);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.ARM_SW_Version`, di.ARM_SoftwareVersion);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.ARM_SVN_Version`, di.ARM_SVN_Version);
+		void this.projectUtils.checkAndSetValue(`DeviceInfo.DSP_Int_FW_Version`, di.DSP_IntFirmwareVersion);
+		void this.projectUtils.checkAndSetValue(`DeviceInfo.ARM_Int_FW_Version`, di.ARM_IntFirmwareVersion);
+		void this.setState("info.connection", this.inverter.Status, true);
 	}
 
 	private async updateRunningData(): Promise<void> {
