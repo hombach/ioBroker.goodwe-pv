@@ -27,10 +27,10 @@ export class ProjectUtils {
 	 */
 	async updateDcParameters(parent: string, name: string, voltage: number, current: number, power: number, mode: number): Promise<void> {
 		await this.checkAndSetChannel(`${parent}.${name}`, name);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Voltage`, voltage);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Current`, current);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Power`, power);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Mode`, mode);
+		await this.checkAndSetValueNumber(`${parent}.${name}.Voltage`, voltage, `Voltage`, `V`);
+		await this.checkAndSetValueNumber(`${parent}.${name}.Current`, current, `Current`, `A`);
+		await this.checkAndSetValueNumber(`${parent}.${name}.Power`, power, `Power`, `W`);
+		await this.checkAndSetValueNumber(`${parent}.${name}.Mode`, mode, `Mode`);
 	}
 
 	/**
@@ -45,10 +45,10 @@ export class ProjectUtils {
 	 */
 	async updateAcPhase(parent: string, name: string, voltage: number, current: number, frequency: number, power: number): Promise<void> {
 		await this.checkAndSetChannel(`${parent}.${name}`, name);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Voltage`, voltage);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Current`, current);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Frequency`, frequency);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Power`, power);
+		await this.checkAndSetValueNumber(`${parent}.${name}.Voltage`, voltage, `Voltage`, `V`);
+		await this.checkAndSetValueNumber(`${parent}.${name}.Current`, current, `Current`, `A`);
+		await this.checkAndSetValueNumber(`${parent}.${name}.Frequency`, frequency, `Frequency`, `Hz`);
+		await this.checkAndSetValueNumber(`${parent}.${name}.Power`, power, `Power`, `W`);
 	}
 
 	/**
@@ -64,11 +64,11 @@ export class ProjectUtils {
 	 */
 	async updateAcPhaseBackup(parent: string, name: string, voltage: number, current: number, frequency: number, power: number, mode: number): Promise<void> {
 		await this.checkAndSetChannel(`${parent}.${name}`, name);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Voltage`, voltage);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Current`, current);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Frequency`, frequency);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Power`, power);
-		await this.checkAndSetValueNumber(`${parent}.${name}.Mode`, mode);
+		void this.checkAndSetValueNumber(`${parent}.${name}.Voltage`, voltage, `Voltage`, `V`);
+		void this.checkAndSetValueNumber(`${parent}.${name}.Current`, current, `Current`, `A`);
+		void this.checkAndSetValueNumber(`${parent}.${name}.Frequency`, frequency, `Frequency`, `Hz`);
+		void this.checkAndSetValueNumber(`${parent}.${name}.Power`, power, `Power`, `W`);
+		void this.checkAndSetValueNumber(`${parent}.${name}.Mode`, mode, `Mode`);
 	}
 
 	/**
@@ -81,8 +81,8 @@ export class ProjectUtils {
 	 */
 	async updateMeterPhase(parent: string, name: string, activePower: number, powerFactor: number): Promise<void> {
 		await this.checkAndSetChannel(`${parent}.${name}`, name);
-		await this.checkAndSetValueNumber(`${parent}.${name}.ActivePower`, activePower);
-		await this.checkAndSetValueNumber(`${parent}.${name}.PowerFactor`, powerFactor);
+		void this.checkAndSetValueNumber(`${parent}.${name}.ActivePower`, activePower, `Active Power`, `W`);
+		void this.checkAndSetValueNumber(`${parent}.${name}.PowerFactor`, powerFactor, `Power Factor`);
 	}
 
 	/**

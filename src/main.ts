@@ -89,118 +89,118 @@ class Goodwe extends utils.Adapter {
 	private async updateRunningData(): Promise<void> {
 		this.inverter.ReadRunningData();
 		const rd = this.inverter.RunningData;
-		await this.projectUtils.checkAndSetChannel("RunningData", "RunningData");
-		await this.projectUtils.updateDcParameters("RunningData", "PV1", rd.Pv1.Voltage, rd.Pv1.Current, rd.Pv1.Power, rd.Pv1.Mode);
-		await this.projectUtils.updateDcParameters("RunningData", "PV2", rd.Pv2.Voltage, rd.Pv2.Current, rd.Pv2.Power, rd.Pv2.Mode);
-		await this.projectUtils.updateDcParameters("RunningData", "PV3", rd.Pv3.Voltage, rd.Pv3.Current, rd.Pv3.Power, rd.Pv3.Mode);
-		await this.projectUtils.updateDcParameters("RunningData", "PV4", rd.Pv4.Voltage, rd.Pv4.Current, rd.Pv4.Power, rd.Pv4.Mode);
-		await this.projectUtils.updateAcPhase("RunningData", "GridL1", rd.GridL1.Voltage, rd.GridL1.Current, rd.GridL1.Frequency, rd.GridL1.Power);
-		await this.projectUtils.updateAcPhase("RunningData", "GridL2", rd.GridL2.Voltage, rd.GridL2.Current, rd.GridL2.Frequency, rd.GridL2.Power);
-		await this.projectUtils.updateAcPhase("RunningData", "GridL3", rd.GridL3.Voltage, rd.GridL3.Current, rd.GridL3.Frequency, rd.GridL3.Power);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.GridMode", rd.GridMode);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.InverterTotalPower", rd.InverterTotalPower);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.AcActivePower", rd.AcActivePower);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.AcReactivePower", rd.AcReactivePower);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.AcApparentPower", rd.AcApparentPower);
-		await this.projectUtils.updateAcPhaseBackup(
-			"RunningData",
-			"BackUpL1",
+		await this.projectUtils.checkAndSetChannel(`RunningData`, `RunningData`, `goodwe-pv.png`);
+		await this.projectUtils.updateDcParameters(`RunningData`, `PV1`, rd.Pv1.Voltage, rd.Pv1.Current, rd.Pv1.Power, rd.Pv1.Mode);
+		await this.projectUtils.updateDcParameters(`RunningData`, `PV2`, rd.Pv2.Voltage, rd.Pv2.Current, rd.Pv2.Power, rd.Pv2.Mode);
+		await this.projectUtils.updateDcParameters(`RunningData`, `PV3`, rd.Pv3.Voltage, rd.Pv3.Current, rd.Pv3.Power, rd.Pv3.Mode);
+		await this.projectUtils.updateDcParameters(`RunningData`, `PV4`, rd.Pv4.Voltage, rd.Pv4.Current, rd.Pv4.Power, rd.Pv4.Mode);
+		await this.projectUtils.updateAcPhase(`RunningData`, `GridL1`, rd.GridL1.Voltage, rd.GridL1.Current, rd.GridL1.Frequency, rd.GridL1.Power);
+		await this.projectUtils.updateAcPhase(`RunningData`, `GridL2`, rd.GridL2.Voltage, rd.GridL2.Current, rd.GridL2.Frequency, rd.GridL2.Power);
+		await this.projectUtils.updateAcPhase(`RunningData`, `GridL3`, rd.GridL3.Voltage, rd.GridL3.Current, rd.GridL3.Frequency, rd.GridL3.Power);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.GridMode`, rd.GridMode);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.InverterTotalPower`, rd.InverterTotalPower);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.AcActivePower`, rd.AcActivePower);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.AcReactivePower`, rd.AcReactivePower);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.AcApparentPower`, rd.AcApparentPower);
+		void this.projectUtils.updateAcPhaseBackup(
+			`RunningData`,
+			`BackUpL1`,
 			rd.BackUpL1.Voltage,
 			rd.BackUpL1.Current,
 			rd.BackUpL1.Frequency,
 			rd.BackUpL1.Power,
 			rd.BackUpL1.Mode,
 		);
-		await this.projectUtils.updateAcPhaseBackup(
-			"RunningData",
-			"BackUpL2",
+		void this.projectUtils.updateAcPhaseBackup(
+			`RunningData`,
+			`BackUpL2`,
 			rd.BackUpL2.Voltage,
 			rd.BackUpL2.Current,
 			rd.BackUpL2.Frequency,
 			rd.BackUpL2.Power,
 			rd.BackUpL2.Mode,
 		);
-		await this.projectUtils.updateAcPhaseBackup(
-			"RunningData",
-			"BackUpL3",
+		void this.projectUtils.updateAcPhaseBackup(
+			`RunningData`,
+			`BackUpL3`,
 			rd.BackUpL3.Voltage,
 			rd.BackUpL3.Current,
 			rd.BackUpL3.Frequency,
 			rd.BackUpL3.Power,
 			rd.BackUpL3.Mode,
 		);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.PowerL1", rd.PowerL1);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.PowerL2", rd.PowerL2);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.PowerL3", rd.PowerL3);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.TotalPowerBackUp", rd.TotalPowerBackUp);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.TotalPower", rd.TotalPower);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.UpsLoadPercent", rd.UpsLoadPercent);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.AirTemperature", rd.AirTemperature);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.ModulTemperature", rd.ModulTemperature);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.RadiatorTemperature", rd.RadiatorTemperature);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.FunctionBitValue", rd.FunctionBitValue);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.BusVoltage", rd.BusVoltage);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.NbusVoltage", rd.NbusVoltage);
-		await this.projectUtils.updateDcParameters("RunningData", "Battery1", rd.Battery1.Voltage, rd.Battery1.Current, rd.Battery1.Power, rd.Battery1.Mode);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.WarningCode", rd.WarningCode);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.SaftyCountry", rd.SaftyCountry);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.WorkMode", rd.WorkMode);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.OperationMode", rd.OperationMode);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.ErrorMessage", rd.ErrorMessage);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.PvEnergyTotal", rd.PvEnergyTotal);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.PvEnergyDay", rd.PvEnergyDay);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyTotal", rd.EnergyTotal);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.HoursTotal", rd.HoursTotal);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyDaySell", rd.EnergyDaySell);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyTotalBuy", rd.EnergyTotalBuy);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyDayBuy", rd.EnergyDayBuy);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyTotalLoad", rd.EnergyTotalLoad);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyDayLoad", rd.EnergyDayLoad);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyBatteryCharge", rd.EnergyBatteryCharge);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyDayCharge", rd.EnergyDayCharge);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyBatteryDischarge", rd.EnergyBatteryDischarge);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.EnergyDayDischarge", rd.EnergyDayDischarge);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.BatteryStrings", rd.BatteryStrings);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.CpldWarningCode", rd.CpldWarningCode);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.WChargeCtrFlag", rd.WChargeCtrFlag);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.DerateFrozenPower", rd.DerateFrozenPower);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.DiagStatusH", rd.DiagStatusH);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.DiagStatusL", rd.DiagStatusL);
-		await this.projectUtils.checkAndSetValueNumber("RunningData.TotalPowerPv", rd.TotalPowerPv);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.PowerL1`, rd.PowerL1, `Power L1`, `W`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.PowerL2`, rd.PowerL2, `Power L2`, `W`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.PowerL3`, rd.PowerL3, `Power L3`, `W`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.TotalPowerBackUp`, rd.TotalPowerBackUp, `Total Power Backup`, `W`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.TotalPower`, rd.TotalPower, `Total Power`, `W`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.UpsLoadPercent`, rd.UpsLoadPercent, `UPS Load Percent`, `%`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.AirTemperature`, rd.AirTemperature, `Air Temperature`, `°C`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.ModulTemperature`, rd.ModulTemperature, `Module Temperature`, `°C`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.RadiatorTemperature`, rd.RadiatorTemperature, `Radiator Temperature`, `°C`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.FunctionBitValue`, rd.FunctionBitValue, `Function Bit Value`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.BusVoltage`, rd.BusVoltage, `Bus Voltage`, `V`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.NbusVoltage`, rd.NbusVoltage, `Nbus Voltage`, `V`);
+		await this.projectUtils.updateDcParameters(`RunningData`, `Battery1`, rd.Battery1.Voltage, rd.Battery1.Current, rd.Battery1.Power, rd.Battery1.Mode);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.WarningCode`, rd.WarningCode, `Warning Code`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.SaftyCountry`, rd.SaftyCountry, `Safety Country`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.WorkMode`, rd.WorkMode, `Work Mode`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.OperationMode`, rd.OperationMode, `Operation Mode`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.ErrorMessage`, rd.ErrorMessage, `Error Message`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.PvEnergyTotal`, rd.PvEnergyTotal, `PV Energy Total`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.PvEnergyDay`, rd.PvEnergyDay, `PV Energy Day`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyTotal`, rd.EnergyTotal, `Energy Total`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.HoursTotal`, rd.HoursTotal, `Hours Total`, `h`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDaySell`, rd.EnergyDaySell, `Energy Day Sell`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyTotalBuy`, rd.EnergyTotalBuy, `Energy Total Buy`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayBuy`, rd.EnergyDayBuy, `Energy Day Buy`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyTotalLoad`, rd.EnergyTotalLoad, `Energy Total Load`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayLoad`, rd.EnergyDayLoad, `Energy Day Load`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyBatteryCharge`, rd.EnergyBatteryCharge, `Energy Battery Charge`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayCharge`, rd.EnergyDayCharge, `Energy Day Charge`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyBatteryDischarge`, rd.EnergyBatteryDischarge, `Energy Battery Discharge`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayDischarge`, rd.EnergyDayDischarge, `Energy Day Discharge`, `kWh`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.BatteryStrings`, rd.BatteryStrings, `Battery Strings`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.CpldWarningCode`, rd.CpldWarningCode, `CPLD Warning Code`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.WChargeCtrFlag`, rd.WChargeCtrFlag, `W Charge Ctr Flag`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFrozenPower`, rd.DerateFrozenPower, `Derate Frozen Power`, `kW`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusH`, rd.DiagStatusH, `Diag Status H`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusL`, rd.DiagStatusL, `Diag Status L`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.TotalPowerPv`, rd.TotalPowerPv, `Total Power PV`, `kW`);
 	}
 
 	private async updateExtComData(): Promise<void> {
 		this.inverter.ReadExtComData();
 		const ec = this.inverter.ExtComData;
-		await this.projectUtils.checkAndSetChannel("ExtComData", "ExtComData");
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.Commode", ec.Commode);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.Rssi", ec.Rssi);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.ManufacturerCode", ec.ManufacturerCode);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.MeterConnectStatus", ec.MeterConnectStatus);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.MeterCommunicateStatus", ec.MeterCommunicateStatus);
-		await this.projectUtils.updateMeterPhase("ExtComData", "L1", ec.L1.ActivePower, ec.L1.PowerFactor);
-		await this.projectUtils.updateMeterPhase("ExtComData", "L2", ec.L2.ActivePower, ec.L2.PowerFactor);
-		await this.projectUtils.updateMeterPhase("ExtComData", "L3", ec.L3.ActivePower, ec.L3.PowerFactor);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.TotalActivePower", ec.TotalActivePower);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.TotalReactivePower", ec.TotalReactivePower);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.PowerFactor", ec.PowerFactor);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.Frequency", ec.Frequency);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.EnergyTotalSell", ec.EnergyTotalSell);
-		await this.projectUtils.checkAndSetValueNumber("ExtComData.EnergyTotalBuy", ec.EnergyTotalBuy);
+		await this.projectUtils.checkAndSetChannel(`ExtComData`, `ExtComData`, `goodwe-pv.png`);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.Commode`, ec.Commode);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.Rssi`, ec.Rssi);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.ManufacturerCode`, ec.ManufacturerCode);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.MeterConnectStatus`, ec.MeterConnectStatus);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.MeterCommunicateStatus`, ec.MeterCommunicateStatus);
+		await this.projectUtils.updateMeterPhase(`ExtComData`, `L1`, ec.L1.ActivePower, ec.L1.PowerFactor);
+		await this.projectUtils.updateMeterPhase(`ExtComData`, `L2`, ec.L2.ActivePower, ec.L2.PowerFactor);
+		await this.projectUtils.updateMeterPhase(`ExtComData`, `L3`, ec.L3.ActivePower, ec.L3.PowerFactor);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.TotalActivePower`, ec.TotalActivePower);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.TotalReactivePower`, ec.TotalReactivePower);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.PowerFactor`, ec.PowerFactor);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.Frequency`, ec.Frequency, `Frequency`, `Hz`);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.EnergyTotalSell`, ec.EnergyTotalSell);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.EnergyTotalBuy`, ec.EnergyTotalBuy);
 	}
 
 	private async updateBmsInfo(): Promise<void> {
 		this.inverter.ReadBmsInfo();
 		const bms = this.inverter.BmsInfo;
-		await this.projectUtils.checkAndSetChannel("BMSInfo", "BMSInfo");
-		await this.projectUtils.checkAndSetValueNumber("BMSInfo.Status", bms.Status);
-		await this.projectUtils.checkAndSetValueNumber("BMSInfo.PackTemperature", bms.PackTemperature);
-		await this.projectUtils.checkAndSetValueNumber("BMSInfo.CurrentMaxCharge", bms.CurrentMaxCharge);
-		await this.projectUtils.checkAndSetValueNumber("BMSInfo.CurrentMaxDischarge", bms.CurrentMaxDischarge);
-		await this.projectUtils.checkAndSetValueNumber("BMSInfo.ErrorCode", bms.ErrorCode);
-		await this.projectUtils.checkAndSetValueNumber("BMSInfo.SOC", bms.SOC);
-		await this.projectUtils.checkAndSetValueNumber("BMSInfo.SOH", bms.SOH);
-		await this.projectUtils.checkAndSetValueNumber("BMSInfo.BatteryStrings", bms.BatteryStrings);
+		await this.projectUtils.checkAndSetChannel(`BMSInfo`, `BMSInfo`, `goodwe-pv.png`);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.Status`, bms.Status);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.PackTemperature`, bms.PackTemperature, `Pack Temperature`, `°C`);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.CurrentMaxCharge`, bms.CurrentMaxCharge);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.CurrentMaxDischarge`, bms.CurrentMaxDischarge);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.ErrorCode`, bms.ErrorCode);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SOC`, bms.SOC, `State of Charge`, `%`);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SOH`, bms.SOH, `State of Health`, `%`);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.BatteryStrings`, bms.BatteryStrings);
 	}
 
 	/**
