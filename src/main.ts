@@ -20,6 +20,8 @@ class Goodwe extends utils.Adapter {
 		super({ ...options, name: "goodwe-pv" });
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
+		// this.on("objectChange", this.onObjectChange.bind(this));
+		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 	}
 
@@ -37,6 +39,29 @@ class Goodwe extends utils.Adapter {
 
 		const groupResult = await this.checkGroupAsync("admin", "admin");
 		this.log.info(`check group user admin group admin: ${String(groupResult)}`);
+
+		// sentry.io ping
+		if (this.supportsFeature && this.supportsFeature("PLUGINS")) {
+			const sentryInstance = this.getPluginInstance("sentry");
+			const today = new Date();
+			const last = await this.getStateAsync("info.lastSentryLogDay");
+			if (last?.val != today.getDate()) {
+				if (sentryInstance) {
+					const Sentry = sentryInstance.getSentryObject();
+					Sentry &&
+						Sentry.withScope((scope: { setLevel: (arg0: string) => void; setTag: (arg0: string, arg1: number) => void }) => {
+							scope.setLevel("info");
+							scope.setTag("SentryDay", today.getDate());
+							scope.setTag("usedPollCycle", this.config.pollCycle);
+							Sentry.captureMessage("Adapter GoodWe-PV started", "info"); // Level "info"
+						});
+				}
+				void this.setState("info.lastSentryLogDay", {
+					val: today.getDate(),
+					ack: true,
+				});
+			}
+		}
 	}
 
 	/**

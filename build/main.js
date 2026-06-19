@@ -54,6 +54,27 @@ class Goodwe extends utils.Adapter {
         this.log.info(`check user admin pw iobroker: ${String(pwResult)}`);
         const groupResult = await this.checkGroupAsync("admin", "admin");
         this.log.info(`check group user admin group admin: ${String(groupResult)}`);
+        if (this.supportsFeature && this.supportsFeature("PLUGINS")) {
+            const sentryInstance = this.getPluginInstance("sentry");
+            const today = new Date();
+            const last = await this.getStateAsync("info.lastSentryLogDay");
+            if (last?.val != today.getDate()) {
+                if (sentryInstance) {
+                    const Sentry = sentryInstance.getSentryObject();
+                    Sentry &&
+                        Sentry.withScope((scope) => {
+                            scope.setLevel("info");
+                            scope.setTag("SentryDay", today.getDate());
+                            scope.setTag("usedPollCycle", this.config.pollCycle);
+                            Sentry.captureMessage("Adapter GoodWe-PV started", "info");
+                        });
+                }
+                void this.setState("info.lastSentryLogDay", {
+                    val: today.getDate(),
+                    ack: true,
+                });
+            }
+        }
     }
     onUnload(callback) {
         try {

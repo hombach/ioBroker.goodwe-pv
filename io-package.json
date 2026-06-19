@@ -117,6 +117,20 @@
         "def": false
       },
       "native": {}
+    },
+    {
+      "_id": "info.lastSentryLogDay",
+      "type": "state",
+      "common": {
+        "role": "value",
+        "name": "Last day of month for Sentry log",
+        "type": "number",
+        "unit": "",
+        "read": true,
+        "write": false,
+        "def": 0
+      },
+      "native": {}
     }
   ]
 }
