@@ -26,20 +26,37 @@
 
 [![NPM](https://nodei.co/npm/iobroker.goodwe-pv.png?downloads=true)](https://nodei.co/npm/iobroker.goodwe-pv/)
 
+## Sentry
+
 ## goodwe-pv adapter for ioBroker
 
-Communication with GoodWe Inverter ET/EH/BH/BT Series
+Communication with GoodWe hybrid inverters of the ET, EH, BH and BT series via the local UDP interface (port 8899). No cloud connection required — the adapter talks directly to the inverter on your LAN.
+
+### Supported devices
+
+All GoodWe hybrid inverters that expose the local Modbus-over-UDP interface on port 8899:
+
+- ET series (e.g. GW5-ET, GW8-ET, …)
+- EH series
+- BH series
+- BT series
+
+## Configuration
+
+| **IP address** | Local IP address of the GoodWe inverter | `127.0.0.1` |
+| **Poll cycle** | How often (in seconds) each data group is re-read from the inverter. The four data groups (DeviceInfo, RunningData, ExtComData, BMSInfo) are staggered so only one UDP request is in flight per second. | `10` |
+
+> **Tip:** Find the inverter's IP address in your router's DHCP lease table, or check the GoodWe SEMS portal / ShinePhone app under "Device Info". Assigning a static IP or DHCP reservation is recommended so the address does not change.
+
 
 ## Based on
 
 This adapter is based on [ioBroker.goodwe](https://github.com/FossyTom/ioBroker.goodwe) by [FossyTom](https://github.com/FossyTom) (Thomas Schönberger), licensed under MIT.
-Copyright (c) 2023 Thomas Schönberger <SchoenbergerThomas@freenet.de> (original ioBroker.goodwe)
-
-## Configuration
-
-## Sentry
+Copyright (c) 2023 Thomas Schönberger <SchoenbergerThomas@freenet.de>
 
 ## Donate
+
+If this adapter is useful to you, a donation is always welcome:
 
 ## Changelog
 <!--
