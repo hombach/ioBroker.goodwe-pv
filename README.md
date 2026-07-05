@@ -70,6 +70,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 ### **WORK IN PROGRESS**
 
 - (hombach) added units
+- (hombach) replace chai/sinon-chai test dependencies with node:assert
 
 ### 0.1.0 (2026-06-19)
 
