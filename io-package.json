@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "goodwe-pv",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "news": {
+      "0.2.0": {
+        "en": "added units\nreplace chai/sinon-chai test dependencies with node:assert\nfix test runner TS5011 rootDir error\nremove redundant mocha/@types/mocha devDependencies (already included in @iobroker/testing)",
+        "de": "hinzugefügte Einheiten\nErsetze die Testabhängigkeiten von chai/sinon-chai durch node:assert\nBehebung des Testrunner-Fehlers TS5011 rootDir\nEntferne redundante mocha/@types/mocha devDependencies (bereits in @iobroker/testing enthalten)",
+        "ru": "добавленные единицы\nЗамените тестовые зависимости chai/sinon-chai на node:assert\nИсправлена ошибка rootDir в тестовом фреймворке TS5011.\nУдалить избыточные зависимости mocha/@types/mocha devDependencies (уже включены в @iobroker/testing)",
+        "pt": "unidades adicionadas\nSubstitua as dependências de teste chai/sinon-chai por node:assert\nCorrigir erro de diretório raiz do executor de testes TS5011\nRemover dependências redundantes de desenvolvimento mocha/@types/mocha (já incluídas em @iobroker/testing)",
+        "nl": "toegevoegde eenheden\nVervang de testafhankelijkheden van chai/sinon-chai door node:assert.\nTestrunner TS5011 rootDir-fout oplossen\nVerwijder overbodige mocha/@types/mocha devDependencies (deze zijn al opgenomen in @iobroker/testing).",
+        "fr": "unités ajoutées\nremplacer les dépendances de test chai/sinon-chai par node:assert\nCorrection de l'erreur rootDir du lanceur de tests TS5011\nsupprimer les dépendances de développement redondantes mocha/@types/mocha (déjà incluses dans @iobroker/testing)",
+        "it": "unità aggiunte\nsostituire le dipendenze di test chai/sinon-chai con node:assert\nCorrezione dell'errore rootDir del test runner TS5011\nrimuovere le dipendenze di sviluppo ridondanti mocha/@types/mocha (già incluse in @iobroker/testing)",
+        "es": "unidades añadidas\nReemplazar las dependencias de prueba chai/sinon-chai con node:assert\nSolucionar el error rootDir del ejecutor de pruebas TS5011\nEliminar las dependencias de desarrollo redundantes de mocha/@types/mocha (ya incluidas en @iobroker/testing)",
+        "pl": "dodane jednostki\nzastąp zależności testowe chai/sinon-chai węzłem:assert\nnapraw błąd rootDir programu Test Runner TS5011\nusuń zbędne zależności devDependencies mocha/@types/mocha (już uwzględnione w @iobroker/testing)",
+        "uk": "додані одиниці\nзамінити тестові залежності chai/sinon-chai на node:assert\nвиправити помилку rootDir у тестовому виконавці TS5011\nвидалити зайві devDependencies mocha/@types/mocha (вже включені в @iobroker/testing)",
+        "zh-cn": "新增单位\n将 chai/sinon-chai 测试依赖项替换为 node:assert\n修复测试运行器 TS5011 根目录错误\n移除冗余的 mocha/@types/mocha 开发依赖项（已包含在 @iobroker/testing 中）"
+      },
       "0.1.0": {
         "en": "Adapter requires admin >= 7.8.23 now.\nrefactored to TypeScript\nupgraded adapter-core\nadded units\nfixed repoChecker warnings",
         "de": "Der Adapter benötigt jetzt Administratorrechte ab Version 7.8.23.\nUmstrukturierung zu TypeScript\naufgerüsteter Adapterkern\nhinzugefügte Einheiten\nrepoChecker-Warnungen behoben",
