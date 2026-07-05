@@ -6,6 +6,7 @@
 		// do not compile anything, this file is just to configure type checking
 		// the compilation is configured in tsconfig.build.json
 		"noEmit": true,
+		"rootDir": ".",
 
 		// check JS files, but do not compile them => tsconfig.build.json
 		"allowJs": true,
@@ -42,5 +43,9 @@
 		// "watch": false
 	},
 	"include": ["src/**/*.ts"],
-	"exclude": ["build/**", "node_modules/**"]
+	"exclude": ["build/**", "node_modules/**"],
+	"ts-node": {
+		"transpileOnly": true,
+		"files": true
+	}
 }

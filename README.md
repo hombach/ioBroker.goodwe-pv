@@ -71,6 +71,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 
 - (hombach) added units
 - (hombach) replace chai/sinon-chai test dependencies with node:assert
+- (hombach) fix test runner TS5011 rootDir error
 
 ### 0.1.0 (2026-06-19)
 
