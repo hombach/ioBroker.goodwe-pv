@@ -288,11 +288,11 @@ export class GoodWeUdp {
 					this.extComData.L2.ActivePower = this.getIntFromByteArray(rcvbuf, 17, 2);
 					this.extComData.L3.ActivePower = this.getIntFromByteArray(rcvbuf, 19, 2);
 					this.extComData.TotalActivePower = this.getIntFromByteArray(rcvbuf, 21, 2);
-					this.extComData.TotalReactivePower = this.getUintFromByteArray(rcvbuf, 23, 2);
-					this.extComData.L1.PowerFactor = this.getUintFromByteArray(rcvbuf, 25, 2) / 100;
-					this.extComData.L2.PowerFactor = this.getUintFromByteArray(rcvbuf, 27, 2) / 100;
-					this.extComData.L3.PowerFactor = this.getUintFromByteArray(rcvbuf, 29, 2) / 100;
-					this.extComData.PowerFactor = this.getUintFromByteArray(rcvbuf, 31, 2) / 100;
+					this.extComData.TotalReactivePower = this.getIntFromByteArray(rcvbuf, 23, 2);
+					this.extComData.L1.PowerFactor = this.getIntFromByteArray(rcvbuf, 25, 2) / 1000;
+					this.extComData.L2.PowerFactor = this.getIntFromByteArray(rcvbuf, 27, 2) / 1000;
+					this.extComData.L3.PowerFactor = this.getIntFromByteArray(rcvbuf, 29, 2) / 1000;
+					this.extComData.PowerFactor = this.getIntFromByteArray(rcvbuf, 31, 2) / 1000;
 					this.extComData.Frequency = this.getUintFromByteArray(rcvbuf, 33, 2) / 100;
 					this.extComData.EnergyTotalSell = this.getFloatFromByteArray(rcvbuf, 35) / 10;
 					this.extComData.EnergyTotalBuy = this.getFloatFromByteArray(rcvbuf, 39) / 10;

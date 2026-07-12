@@ -156,10 +156,10 @@ class Goodwe extends utils.Adapter {
         void this.projectUtils.checkAndSetValueNumber(`RunningData.CpldWarningCode`, rd.CpldWarningCode, `CPLD Warning Code`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.WChargeCtrFlag`, rd.WChargeCtrFlag, `W Charge Ctr Flag`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFlag`, rd.DerateFlag, `Derate Flag`);
-        void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFrozenPower`, rd.DerateFrozenPower, `Derate Frozen Power`, `kW`, `value.power`);
+        void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFrozenPower`, rd.DerateFrozenPower, `Derate Frozen Power`, `W`, `value.power`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusH`, rd.DiagStatusH, `Diag Status H`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusL`, rd.DiagStatusL, `Diag Status L`);
-        void this.projectUtils.checkAndSetValueNumber(`RunningData.TotalPowerPv`, rd.TotalPowerPv, `Total Power PV`, `kW`, `value.power`);
+        void this.projectUtils.checkAndSetValueNumber(`RunningData.TotalPowerPv`, rd.TotalPowerPv, `Total Power PV`, `W`, `value.power`);
     }
     async updateExtComData() {
         this.inverter.ReadExtComData();

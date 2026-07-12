@@ -69,6 +69,8 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 ### **WORK IN PROGRESS**
 
 - (hombach) assign semantic ioBroker roles to many states
+- (hombach) fix PowerFactor scaling: signed int / 1000 instead of uint / 100
+- (hombach) fix TotalReactivePower sign: use signed int (VAR can be negative)
 
 ### 0.2.1 (2026-07-12)
 
