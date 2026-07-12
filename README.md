@@ -66,6 +66,10 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+- (hombach) assign semantic ioBroker roles to many states
+
 ### 0.2.1 (2026-07-12)
 
 - (hombach) add GoodWe manufacturer link to README
