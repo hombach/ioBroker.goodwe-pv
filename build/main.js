@@ -43,17 +43,16 @@ class Goodwe extends utils.Adapter {
     constructor(options = {}) {
         super({ ...options, name: "goodwe-pv" });
         this.on("ready", this.onReady.bind(this));
-        this.on("stateChange", this.onStateChange.bind(this));
         this.on("unload", this.onUnload.bind(this));
     }
     async onReady() {
         void this.setState("info.connection", false, true);
+        if (!this.config.pollCycle || this.config.pollCycle < 10 || this.config.pollCycle > 3600) {
+            this.log.error(`Invalid pollCycle value: ${String(this.config.pollCycle)}. Must be between 10 and 3600 seconds. Adapter stopped.`);
+            return;
+        }
         this.inverter.Connect(this.config.ipAddr, 8899);
         this.myTimer();
-        const pwResult = await this.checkPasswordAsync("admin", "iobroker");
-        this.log.info(`check user admin pw iobroker: ${String(pwResult)}`);
-        const groupResult = await this.checkGroupAsync("admin", "admin");
-        this.log.info(`check group user admin group admin: ${String(groupResult)}`);
         if (this.supportsFeature && this.supportsFeature("PLUGINS")) {
             const sentryInstance = this.getPluginInstance("sentry");
             const today = new Date();
@@ -83,14 +82,6 @@ class Goodwe extends utils.Adapter {
         }
         catch {
             callback();
-        }
-    }
-    onStateChange(id, state) {
-        if (state) {
-            this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-        }
-        else {
-            this.log.info(`state ${id} deleted`);
         }
     }
     async updateDeviceInfo() {
@@ -164,6 +155,7 @@ class Goodwe extends utils.Adapter {
         void this.projectUtils.checkAndSetValueNumber(`RunningData.BatteryStrings`, rd.BatteryStrings, `Battery Strings`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.CpldWarningCode`, rd.CpldWarningCode, `CPLD Warning Code`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.WChargeCtrFlag`, rd.WChargeCtrFlag, `W Charge Ctr Flag`);
+        void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFlag`, rd.DerateFlag, `Derate Flag`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFrozenPower`, rd.DerateFrozenPower, `Derate Frozen Power`, `kW`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusH`, rd.DiagStatusH, `Diag Status H`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusL`, rd.DiagStatusL, `Diag Status L`);

@@ -19,7 +19,7 @@ class Goodwe extends utils.Adapter {
 	public constructor(options: Partial<utils.AdapterOptions> = {}) {
 		super({ ...options, name: "goodwe-pv" });
 		this.on("ready", this.onReady.bind(this));
-		this.on("stateChange", this.onStateChange.bind(this));
+		// this.on("stateChange", this.onStateChange.bind(this));
 		// this.on("objectChange", this.onObjectChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
@@ -31,14 +31,13 @@ class Goodwe extends utils.Adapter {
 	private async onReady(): Promise<void> {
 		void this.setState("info.connection", false, true);
 
+		if (!this.config.pollCycle || this.config.pollCycle < 10 || this.config.pollCycle > 3600) {
+			this.log.error(`Invalid pollCycle value: ${String(this.config.pollCycle)}. Must be between 10 and 3600 seconds. Adapter stopped.`);
+			return;
+		}
+
 		this.inverter.Connect(this.config.ipAddr, 8899);
 		this.myTimer();
-
-		const pwResult = await this.checkPasswordAsync("admin", "iobroker");
-		this.log.info(`check user admin pw iobroker: ${String(pwResult)}`);
-
-		const groupResult = await this.checkGroupAsync("admin", "admin");
-		this.log.info(`check group user admin group admin: ${String(groupResult)}`);
 
 		// sentry.io ping
 		if (this.supportsFeature && this.supportsFeature("PLUGINS")) {
@@ -78,19 +77,19 @@ class Goodwe extends utils.Adapter {
 		}
 	}
 
-	/**
-	 * Is called if a subscribed state changes.
-	 *
-	 * @param id State ID of the changed object
-	 * @param state New state value, or null if deleted
-	 */
-	private onStateChange(id: string, state: ioBroker.State | null | undefined): void {
-		if (state) {
-			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-		} else {
-			this.log.info(`state ${id} deleted`);
-		}
-	}
+	// /**
+	//  * Is called if a subscribed state changes.
+	//  *
+	//  * @param id State ID of the changed object
+	//  * @param state New state value, or null if deleted
+	//  */
+	// private onStateChange(id: string, state: ioBroker.State | null | undefined): void {
+	// 	if (state) {
+	// 		this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+	// 	} else {
+	// 		this.log.info(`state ${id} deleted`);
+	// 	}
+	// }
 
 	private async updateDeviceInfo(): Promise<void> {
 		this.inverter.ReadDeviceInfo();
@@ -188,6 +187,7 @@ class Goodwe extends utils.Adapter {
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.BatteryStrings`, rd.BatteryStrings, `Battery Strings`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.CpldWarningCode`, rd.CpldWarningCode, `CPLD Warning Code`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.WChargeCtrFlag`, rd.WChargeCtrFlag, `W Charge Ctr Flag`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFlag`, rd.DerateFlag, `Derate Flag`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFrozenPower`, rd.DerateFrozenPower, `Derate Frozen Power`, `kW`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusH`, rd.DiagStatusH, `Diag Status H`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusL`, rd.DiagStatusL, `Diag Status L`);

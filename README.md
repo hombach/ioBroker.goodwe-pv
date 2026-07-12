@@ -28,11 +28,11 @@
 
 ## Sentry
 
-UNDER CONSTRUCTION: **This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information on how to disable error reporting, see <a href="https://github.com/ioBroker/plugin-sentry#plugin-sentry">Sentry-Plugin Documentation</a>!
+**This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information on how to disable error reporting, see <a href="https://github.com/ioBroker/plugin-sentry#plugin-sentry">Sentry-Plugin Documentation</a>!
 
 ## goodwe-pv adapter for ioBroker
 
-Communication with GoodWe hybrid inverters of the ET, EH, BH and BT series via the local UDP interface (port 8899). No cloud connection required — the adapter talks directly to the inverter on your LAN.
+Communication with [GoodWe](https://www.goodwe.com) hybrid inverters of the ET, EH, BH and BT series via the local UDP interface (port 8899). No cloud connection required — the adapter talks directly to the inverter on your LAN.
 
 ### Supported devices
 
@@ -72,6 +72,12 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 - (hombach) replace chai/sinon-chai test dependencies with node:assert
 - (hombach) fix test runner TS5011 rootDir error
 - (hombach) remove redundant mocha/@types/mocha devDependencies (already included in @iobroker/testing)
+- (hombach) add GoodWe manufacturer link to README
+- (hombach) remove debug code (checkPasswordAsync/checkGroupAsync) from onReady
+- (hombach) disable unused onStateChange handler (no writable states)
+- (hombach) add runtime validation for pollCycle config parameter
+- (hombach) expose DerateFlag as ioBroker state in RunningData
+- (hombach) fix UTF-8 encoding corruption in all i18n translation files
 
 ### 0.1.0 (2026-06-19)
 
