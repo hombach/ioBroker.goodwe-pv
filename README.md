@@ -66,18 +66,22 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### 0.2.0 (2026-07-05)
 
-- (hombach) added units
-- (hombach) replace chai/sinon-chai test dependencies with node:assert
-- (hombach) fix test runner TS5011 rootDir error
-- (hombach) remove redundant mocha/@types/mocha devDependencies (already included in @iobroker/testing)
+### **WORK IN PROGRESS**
+
 - (hombach) add GoodWe manufacturer link to README
 - (hombach) remove debug code (checkPasswordAsync/checkGroupAsync) from onReady
 - (hombach) disable unused onStateChange handler (no writable states)
 - (hombach) add runtime validation for pollCycle config parameter
 - (hombach) expose DerateFlag as ioBroker state in RunningData
 - (hombach) fix UTF-8 encoding corruption in all i18n translation files
+
+### 0.2.0 (2026-07-05)
+
+- (hombach) added units
+- (hombach) replace chai/sinon-chai test dependencies with node:assert
+- (hombach) fix test runner TS5011 rootDir error
+- (hombach) remove redundant mocha/@types/mocha devDependencies (already included in @iobroker/testing)
 
 ### 0.1.0 (2026-06-19)
 
