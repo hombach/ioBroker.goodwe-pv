@@ -262,8 +262,8 @@ class GoodWeUdp {
                     this.extComData.L3.PowerFactor = this.getIntFromByteArray(rcvbuf, 29, 2) / 1000;
                     this.extComData.PowerFactor = this.getIntFromByteArray(rcvbuf, 31, 2) / 1000;
                     this.extComData.Frequency = this.getUintFromByteArray(rcvbuf, 33, 2) / 100;
-                    this.extComData.EnergyTotalSell = this.getFloatFromByteArray(rcvbuf, 35) / 10;
-                    this.extComData.EnergyTotalBuy = this.getFloatFromByteArray(rcvbuf, 39) / 10;
+                    this.extComData.EnergyTotalSell = this.getFloatFromByteArray(rcvbuf, 35) / 1000;
+                    this.extComData.EnergyTotalBuy = this.getFloatFromByteArray(rcvbuf, 39) / 1000;
                     this.status = GoodWeUdp.ConStatus.Online;
                 }
                 else {
