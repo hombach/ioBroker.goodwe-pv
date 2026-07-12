@@ -66,8 +66,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.2.1 (2026-07-12)
 
 - (hombach) add GoodWe manufacturer link to README
 - (hombach) remove debug code (checkPasswordAsync/checkGroupAsync) from onReady
