@@ -11,3 +11,6 @@
 [![NPM](https://nodei.co/npm/iobroker.goodwe-pv.png?downloads=true)](https://nodei.co/npm/iobroker.goodwe-pv/)
 
 ## Changelog - OLD CHANGES
+## 0.0.1 (2026-06-14)
+
+- (hombach) initial release based on ioBroker.goodwe by FossyTom

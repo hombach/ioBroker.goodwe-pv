@@ -66,7 +66,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.2.3 (2026-07-18)
 
 - (hombach) replace deprecated role value.power.consumption with value.energy.consumed
 - (hombach) replace value.power.produced with value.energy.produced for accumulated kWh states
@@ -102,10 +102,6 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 - (hombach) upgraded adapter-core
 - (hombach) added units
 - (hombach) fixed repoChecker warnings
-
-### 0.0.1 (2026-06-14)
-
-- (hombach) initial release based on ioBroker.goodwe by FossyTom
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

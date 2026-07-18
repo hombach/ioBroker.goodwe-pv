@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "goodwe-pv",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "news": {
+      "0.2.3": {
+        "en": "replace deprecated role value.power.consumption with value.energy.consumed\nreplace value.power.produced with value.energy.produced for accumulated kWh states\nreplace invalid roles value.power.apparent and value.signal with valid alternatives",
+        "de": "Ersetzen Sie die veraltete Rolle „value.power.consumption“ durch „value.energy.consumed“.\nErsetzen Sie „value.power.produced“ durch „value.energy.produced“ für die akkumulierten kWh-Werte.\nErsetze die ungültigen Rollen value.power.apparent und value.signal durch gültige Alternativen.",
+        "ru": "Замените устаревшую роль value.power.consumption на value.energy.consumed.\nЗамените value.power.produced на value.energy.produced для накопленных значений кВт·ч.\nЗамените недопустимые роли value.power.apparent и value.signal на допустимые альтернативы.",
+        "pt": "Substitua o valor da função obsoleta `value.power.consumption` por `value.energy.consumed`.\nSubstitua `value.power.produced` por `value.energy.produced` para estados de kWh acumulados.\nSubstitua os valores inválidos `value.power.apparent` e `value.signal` por alternativas válidas.",
+        "nl": "Vervang de verouderde rolwaarde `value.power.consumption` door `value.energy.consumed`.\nVervang value.power.produced door value.energy.produced voor geaccumuleerde kWh-waarden.\nVervang de ongeldige rollen value.power.apparent en value.signal door geldige alternatieven.",
+        "fr": "remplacer la valeur obsolète du rôle value.power.consumption par value.energy.consumed\nremplacer value.power.produced par value.energy.produced pour les états de kWh accumulés\nRemplacez les rôles invalides value.power.apparent et value.signal par des alternatives valides.",
+        "it": "sostituire il ruolo obsoleto value.power.consumption con value.energy.consumed\nsostituire value.power.produced con value.energy.produced per gli stati di kWh accumulati\nsostituire i ruoli non validi value.power.apparent e value.signal con alternative valide",
+        "es": "Reemplazar el rol obsoleto value.power.consumption por value.energy.consumed\nReemplazar value.power.produced con value.energy.produced para estados de kWh acumulados\nReemplazar los roles no válidos value.power.apparent y value.signal con alternativas válidas.",
+        "pl": "zastąp przestarzałą rolę value.power.consumption rolą value.energy.consumed\nzastąp value.power.produced value.energy.produced dla stanów skumulowanej kWh\nzamień nieprawidłowe role value.power.apparent i value.signal na prawidłowe alternatywy",
+        "uk": "замінити застарілу роль value.power.consumption на value.energy.consumed\nзамініть value.power.produced на value.energy.produced для накопичених кВт⋅год станів\nзамініть недійсні ролі value.power.apparent та value.signal на дійсні альтернативи",
+        "zh-cn": "将已弃用的角色 value.power.consumption 替换为 value.energy.consumed\n将累计 kWh 状态的 value.power.produced 替换为 value.energy.produced\n将无效角色 value.power.apparent 和 value.signal 替换为有效替代值"
+      },
       "0.2.2": {
         "en": "assign semantic ioBroker roles to many states\nfix PowerFactor scaling: signed int / 1000 instead of uint / 100\nfix TotalReactivePower sign: use signed int (VAR can be negative)\nfix EnergyTotalSell/Buy unit: GM3000 meter float is in Wh, divide by 1000",
         "de": "Weisen Sie vielen Zuständen semantische ioBroker-Rollen zu.\nPowerFactor-Skalierung korrigiert: signed int / 1000 statt uint / 100\nVorzeichen der Gesamtblindleistung korrigieren: Verwendung von signed int (VAR kann negativ sein)\nEinheit für EnergyTotalSell/Buy korrigieren: GM3000-Zählerstand in Wh, durch 1000 teilen",
