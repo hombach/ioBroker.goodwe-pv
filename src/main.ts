@@ -125,7 +125,7 @@ class Goodwe extends utils.Adapter {
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.InverterTotalPower`, rd.InverterTotalPower, `Inverter Total Power`, `W`, `value.power`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.AcActivePower`, rd.AcActivePower, `AC Active Power`, `W`, `value.power`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.AcReactivePower`, rd.AcReactivePower, `AC Reactive Power`, `VAR`, `value.power.reactive`);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.AcApparentPower`, rd.AcApparentPower, `AC Apparent Power`, `VA`, `value.power.apparent`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.AcApparentPower`, rd.AcApparentPower, `AC Apparent Power`, `VA`, `value.power`);
 		void this.projectUtils.updateAcPhaseBackup(
 			`RunningData`,
 			`BackUpL1`,
@@ -177,36 +177,36 @@ class Goodwe extends utils.Adapter {
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.WorkMode`, rd.WorkMode, `Work Mode`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.OperationMode`, rd.OperationMode, `Operation Mode`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.ErrorMessage`, rd.ErrorMessage, `Error Message`);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.PvEnergyTotal`, rd.PvEnergyTotal, `PV Energy Total`, `kWh`, `value.power.produced`);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.PvEnergyDay`, rd.PvEnergyDay, `PV Energy Day`, `kWh`, `value.power.produced`);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyTotal`, rd.EnergyTotal, `Energy Total`, `kWh`, `value.power.produced`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.PvEnergyTotal`, rd.PvEnergyTotal, `PV Energy Total`, `kWh`, `value.energy.produced`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.PvEnergyDay`, rd.PvEnergyDay, `PV Energy Day`, `kWh`, `value.energy.produced`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyTotal`, rd.EnergyTotal, `Energy Total`, `kWh`, `value.energy.produced`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.HoursTotal`, rd.HoursTotal, `Hours Total`, `h`);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDaySell`, rd.EnergyDaySell, `Energy Day Sell`, `kWh`, `value.power.produced`);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyTotalBuy`, rd.EnergyTotalBuy, `Energy Total Buy`, `kWh`, `value.power.consumption`);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayBuy`, rd.EnergyDayBuy, `Energy Day Buy`, `kWh`, `value.power.consumption`);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyTotalLoad`, rd.EnergyTotalLoad, `Energy Total Load`, `kWh`, `value.power.consumption`);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayLoad`, rd.EnergyDayLoad, `Energy Day Load`, `kWh`, `value.power.consumption`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDaySell`, rd.EnergyDaySell, `Energy Day Sell`, `kWh`, `value.energy.produced`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyTotalBuy`, rd.EnergyTotalBuy, `Energy Total Buy`, `kWh`, `value.energy.consumed`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayBuy`, rd.EnergyDayBuy, `Energy Day Buy`, `kWh`, `value.energy.consumed`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyTotalLoad`, rd.EnergyTotalLoad, `Energy Total Load`, `kWh`, `value.energy.consumed`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayLoad`, rd.EnergyDayLoad, `Energy Day Load`, `kWh`, `value.energy.consumed`);
 		void this.projectUtils.checkAndSetValueNumber(
 			`RunningData.EnergyBatteryCharge`,
 			rd.EnergyBatteryCharge,
 			`Energy Battery Charge`,
 			`kWh`,
-			`value.power.consumption`,
+			`value.energy.consumed`,
 		);
-		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayCharge`, rd.EnergyDayCharge, `Energy Day Charge`, `kWh`, `value.power.consumption`);
+		void this.projectUtils.checkAndSetValueNumber(`RunningData.EnergyDayCharge`, rd.EnergyDayCharge, `Energy Day Charge`, `kWh`, `value.energy.consumed`);
 		void this.projectUtils.checkAndSetValueNumber(
 			`RunningData.EnergyBatteryDischarge`,
 			rd.EnergyBatteryDischarge,
 			`Energy Battery Discharge`,
 			`kWh`,
-			`value.power.produced`,
+			`value.energy.produced`,
 		);
 		void this.projectUtils.checkAndSetValueNumber(
 			`RunningData.EnergyDayDischarge`,
 			rd.EnergyDayDischarge,
 			`Energy Day Discharge`,
 			`kWh`,
-			`value.power.produced`,
+			`value.energy.produced`,
 		);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.BatteryStrings`, rd.BatteryStrings, `Battery Strings`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.CpldWarningCode`, rd.CpldWarningCode, `CPLD Warning Code`);
@@ -223,7 +223,7 @@ class Goodwe extends utils.Adapter {
 		const ec = this.inverter.ExtComData;
 		await this.projectUtils.checkAndSetChannel(`ExtComData`, `ExtComData`, `goodwe-pv.png`);
 		void this.projectUtils.checkAndSetValueNumber(`ExtComData.Commode`, ec.Commode, `Communication Mode`);
-		void this.projectUtils.checkAndSetValueNumber(`ExtComData.Rssi`, ec.Rssi, `Signal Strength`, undefined, `value.signal`);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.Rssi`, ec.Rssi, `Signal Strength`, undefined, `value`);
 		void this.projectUtils.checkAndSetValueNumber(`ExtComData.ManufacturerCode`, ec.ManufacturerCode, `Manufacturer Code`);
 		void this.projectUtils.checkAndSetValueNumber(`ExtComData.MeterConnectStatus`, ec.MeterConnectStatus, `Meter Connect Status`);
 		void this.projectUtils.checkAndSetValueNumber(`ExtComData.MeterCommunicateStatus`, ec.MeterCommunicateStatus, `Meter Communicate Status`);
@@ -240,8 +240,8 @@ class Goodwe extends utils.Adapter {
 		);
 		void this.projectUtils.checkAndSetValueNumber(`ExtComData.PowerFactor`, ec.PowerFactor, `Power Factor`);
 		void this.projectUtils.checkAndSetValueNumber(`ExtComData.Frequency`, ec.Frequency, `Frequency`, `Hz`, `value.frequency`);
-		void this.projectUtils.checkAndSetValueNumber(`ExtComData.EnergyTotalSell`, ec.EnergyTotalSell, `Energy Total Sold`, `kWh`, `value.power.produced`);
-		void this.projectUtils.checkAndSetValueNumber(`ExtComData.EnergyTotalBuy`, ec.EnergyTotalBuy, `Energy Total Bought`, `kWh`, `value.power.consumption`);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.EnergyTotalSell`, ec.EnergyTotalSell, `Energy Total Sold`, `kWh`, `value.energy.produced`);
+		void this.projectUtils.checkAndSetValueNumber(`ExtComData.EnergyTotalBuy`, ec.EnergyTotalBuy, `Energy Total Bought`, `kWh`, `value.energy.consumed`);
 	}
 
 	private async updateBmsInfo(): Promise<void> {
