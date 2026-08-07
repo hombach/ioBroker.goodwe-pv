@@ -11,6 +11,14 @@
 [![NPM](https://nodei.co/npm/iobroker.goodwe-pv.png?downloads=true)](https://nodei.co/npm/iobroker.goodwe-pv/)
 
 ## Changelog - OLD CHANGES
+## 0.1.0 (2026-06-19)
+
+- (ioBroker-Bot) Adapter requires admin >= 7.8.23 now.
+- (hombach) refactored to TypeScript
+- (hombach) upgraded adapter-core
+- (hombach) added units
+- (hombach) fixed repoChecker warnings
+
 ## 0.0.1 (2026-06-14)
 
 - (hombach) initial release based on ioBroker.goodwe by FossyTom

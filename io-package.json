@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "goodwe-pv",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "news": {
+      "0.2.4": {
+        "en": "add missing descriptions to DeviceInfo and BMSInfo states\nremove placeholder desc \"-\" from states without a meaningful description\nremove unused Rtc field from GoodWeRunningData type\nupdated dependencies",
+        "de": "Fehlende Beschreibungen zu den Zuständen DeviceInfo und BMSInfo hinzufügen\nPlatzhalter \"-\" aus Zuständen ohne aussagekräftige Beschreibung entfernen\nEntferne das ungenutzte Rtc-Feld aus dem Datentyp GoodWeRunningData\naktualisierte Abhängigkeiten",
+        "ru": "Добавить недостающие описания в состояния DeviceInfo и BMSInfo\nУдалить заполнитель описания \"-\" из описаний штатов, не имеющих содержательного описания.\nУдалить неиспользуемое поле RTC из типа GoodWeRunningData\nобновленные зависимости",
+        "pt": "Adicionar descrições ausentes aos estados DeviceInfo e BMSInfo\nRemover descrição de espaço reservado \"-\" de estados sem uma descrição significativa\nRemover o campo Rtc não utilizado do tipo GoodWeRunningData\ndependências atualizadas",
+        "nl": "Voeg ontbrekende beschrijvingen toe aan de DeviceInfo- en BMSInfo-statussen.\nVerwijder de placeholderbeschrijving \"-\" uit staten zonder zinvolle beschrijving.\nVerwijder het ongebruikte Rtc-veld uit het GoodWeRunningData-type.\nbijgewerkte afhankelijkheden",
+        "fr": "ajouter les descriptions manquantes aux états DeviceInfo et BMSInfo\nSupprimer le caractère générique « - » des états sans description significative\nsupprimer le champ Rtc inutilisé du type GoodWeRunningData\ndépendances mises à jour",
+        "it": "aggiungere le descrizioni mancanti agli stati DeviceInfo e BMSInfo\nrimuovere il segnaposto \"-\" dagli stati senza una descrizione significativa\nrimuovere il campo Rtc non utilizzato dal tipo GoodWeRunningData\ndipendenze aggiornate",
+        "es": "agregar descripciones faltantes a los estados DeviceInfo y BMSInfo\nEliminar el marcador de posición \"-\" de los estados sin una descripción significativa.\nEliminar el campo Rtc no utilizado del tipo GoodWeRunningData\ndependencias actualizadas",
+        "pl": "dodaj brakujące opisy do stanów DeviceInfo i BMSInfo\nusuń symbol zastępczy „-” ze stanów bez sensownego opisu\nusuń nieużywane pole Rtc z typu GoodWeRunningData\nzaktualizowane zależności",
+        "uk": "додати відсутні описи до станів DeviceInfo та BMSInfo\nвидалити опис \"-\" у станів без змістовного опису\nвидалити невикористане поле Rtc з типу GoodWeRunningData\nоновлені залежності",
+        "zh-cn": "为 DeviceInfo 和 BMSInfo 状态添加缺失的描述\n从没有有效描述的状态中移除占位符描述“-”。\n从 GoodWeRunningData 类型中移除未使用的 Rtc 字段\n更新依赖项"
+      },
       "0.2.3": {
         "en": "replace deprecated role value.power.consumption with value.energy.consumed\nreplace value.power.produced with value.energy.produced for accumulated kWh states\nreplace invalid roles value.power.apparent and value.signal with valid alternatives",
         "de": "Ersetzen Sie die veraltete Rolle „value.power.consumption“ durch „value.energy.consumed“.\nErsetzen Sie „value.power.produced“ durch „value.energy.produced“ für die akkumulierten kWh-Werte.\nErsetze die ungültigen Rollen value.power.apparent und value.signal durch gültige Alternativen.",

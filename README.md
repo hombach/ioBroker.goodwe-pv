@@ -66,8 +66,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.2.4 (2026-08-07)
 
 - (hombach) add missing descriptions to DeviceInfo and BMSInfo states
 - (hombach) remove placeholder desc "-" from states without a meaningful description
@@ -102,14 +101,6 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 - (hombach) replace chai/sinon-chai test dependencies with node:assert
 - (hombach) fix test runner TS5011 rootDir error
 - (hombach) remove redundant mocha/@types/mocha devDependencies (already included in @iobroker/testing)
-
-### 0.1.0 (2026-06-19)
-
-- (ioBroker-Bot) Adapter requires admin >= 7.8.23 now.
-- (hombach) refactored to TypeScript
-- (hombach) upgraded adapter-core
-- (hombach) added units
-- (hombach) fixed repoChecker warnings
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 
