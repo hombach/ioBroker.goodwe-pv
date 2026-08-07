@@ -79,7 +79,6 @@ class AcPhaseBackup {
 }
 exports.AcPhaseBackup = AcPhaseBackup;
 class GoodWeRunningData {
-    Rtc = new Date();
     Pv1 = new DcParameters();
     Pv2 = new DcParameters();
     Pv3 = new DcParameters();

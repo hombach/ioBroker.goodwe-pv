@@ -262,7 +262,7 @@ export class ProjectUtils {
 	async checkAndSetValueNumber(
 		stateName: string,
 		value: number,
-		description = "-",
+		description?: string,
 		unit?: string,
 		role = "value",
 		writeable = false,
@@ -277,7 +277,7 @@ export class ProjectUtils {
 				name: stateName.split(".").pop() ?? stateName,
 				type: "number",
 				role: role,
-				desc: description,
+				...(description ? { desc: description } : {}),
 				read: true,
 				write: writeable,
 				...(unit != null ? { unit } : {}),

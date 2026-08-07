@@ -95,16 +95,16 @@ class Goodwe extends utils.Adapter {
 		this.inverter.ReadDeviceInfo();
 		const di = this.inverter.DeviceInfo;
 		await this.projectUtils.checkAndSetChannel(`DeviceInfo`, `DeviceInfo`, `goodwe-pv.png`);
-		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.ModbusProtocolVersion`, di.ModbusProtocolVersion);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.ModbusProtocolVersion`, di.ModbusProtocolVersion, `Modbus Protocol Version`);
 		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.RatedPower`, di.RatedPower, `Rated Power`, `W`, `value.power`);
-		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.AcOutputType`, di.AcOutputType);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.AcOutputType`, di.AcOutputType, `AC Output Type`);
 		void this.projectUtils.checkAndSetValue(`DeviceInfo.SerialNumber`, di.SerialNumber, `Serial Number`);
 		void this.projectUtils.checkAndSetValue(`DeviceInfo.DeviceType`, di.DeviceType, `Device Type`);
-		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.DSP1_SW_Version`, di.DSP1_SoftwareVersion);
-		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.DSP2_SW_Version`, di.DSP2_SoftwareVersion);
-		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.DSP_SVN_Version`, di.DSP_SVN_Version);
-		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.ARM_SW_Version`, di.ARM_SoftwareVersion);
-		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.ARM_SVN_Version`, di.ARM_SVN_Version);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.DSP1_SW_Version`, di.DSP1_SoftwareVersion, `DSP1 Software Version`);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.DSP2_SW_Version`, di.DSP2_SoftwareVersion, `DSP2 Software Version`);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.DSP_SVN_Version`, di.DSP_SVN_Version, `DSP SVN Version`);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.ARM_SW_Version`, di.ARM_SoftwareVersion, `ARM Software Version`);
+		void this.projectUtils.checkAndSetValueNumber(`DeviceInfo.ARM_SVN_Version`, di.ARM_SVN_Version, `ARM SVN Version`);
 		void this.projectUtils.checkAndSetValue(`DeviceInfo.DSP_Int_FW_Version`, di.DSP_IntFirmwareVersion);
 		void this.projectUtils.checkAndSetValue(`DeviceInfo.ARM_Int_FW_Version`, di.ARM_IntFirmwareVersion);
 		void this.setState("info.connection", this.inverter.Status, true);
@@ -255,7 +255,7 @@ class Goodwe extends utils.Adapter {
 		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.ErrorCode`, bms.ErrorCode, `Error Code`);
 		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SOC`, bms.SOC, `State of Charge`, `%`, `value.battery`);
 		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SOH`, bms.SOH, `State of Health`, `%`);
-		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.BatteryStrings`, bms.BatteryStrings);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.BatteryStrings`, bms.BatteryStrings, `Battery Strings`);
 	}
 
 	/**

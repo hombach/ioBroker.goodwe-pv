@@ -66,7 +66,12 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
 ### **WORK IN PROGRESS**
+
+- (hombach) add missing descriptions to DeviceInfo and BMSInfo states
+- (hombach) remove placeholder desc "-" from states without a meaningful description
+- (hombach) remove unused Rtc field from GoodWeRunningData type
 - (hombach) updated dependencies
 
 ### 0.2.3 (2026-07-18)

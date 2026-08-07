@@ -126,13 +126,13 @@ class ProjectUtils {
             }
         }
     }
-    async checkAndSetValueNumber(stateName, value, description = "-", unit, role = "value", writeable = false, dontUpdate = false, forceMode = false, min, max, step) {
+    async checkAndSetValueNumber(stateName, value, description, unit, role = "value", writeable = false, dontUpdate = false, forceMode = false, min, max, step) {
         if (value !== undefined) {
             const commonObj = {
                 name: stateName.split(".").pop() ?? stateName,
                 type: "number",
                 role: role,
-                desc: description,
+                ...(description ? { desc: description } : {}),
                 read: true,
                 write: writeable,
                 ...(unit != null ? { unit } : {}),
