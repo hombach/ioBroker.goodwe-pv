@@ -66,6 +66,11 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (hombach) updated dependencies
+
 ### 0.2.4 (2026-08-07)
 
 - (hombach) add missing descriptions to DeviceInfo and BMSInfo states
