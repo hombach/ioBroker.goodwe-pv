@@ -69,6 +69,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 
 ### **WORK IN PROGRESS**
 
+- (hombach) version for stable release
 - (hombach) updated dependencies
 
 ### 0.2.4 (2026-08-07)
