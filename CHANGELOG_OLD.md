@@ -11,6 +11,13 @@
 [![NPM](https://nodei.co/npm/iobroker.goodwe-pv.png?downloads=true)](https://nodei.co/npm/iobroker.goodwe-pv/)
 
 ## Changelog - OLD CHANGES
+## 0.2.0 (2026-07-05)
+
+- (hombach) added units
+- (hombach) replace chai/sinon-chai test dependencies with node:assert
+- (hombach) fix test runner TS5011 rootDir error
+- (hombach) remove redundant mocha/@types/mocha devDependencies (already included in @iobroker/testing)
+
 ## 0.1.0 (2026-06-19)
 
 - (ioBroker-Bot) Adapter requires admin >= 7.8.23 now.

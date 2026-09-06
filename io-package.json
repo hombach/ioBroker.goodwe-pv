@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "goodwe-pv",
-    "version": "0.2.4",
+    "version": "1.0.0",
     "news": {
+      "1.0.0": {
+        "en": "version for stable release\nupdated dependencies",
+        "de": "Version für Stable Release\nNeue Abhängigkeiten",
+        "ru": "версия для стабильного выпуска\nобновленные зависимости",
+        "pt": "versão estável\nnovas dependências",
+        "nl": "versie voor stabiele release\nbijgewerkte afhankelijkheden",
+        "fr": "version pour version stable\ndépendances mises à jour",
+        "it": "versione stabile\ndipendenze aggiornate",
+        "es": "versión para versión estable\ndependencias actualizadas",
+        "pl": "wersja dla stabilnego wydania\nzaktualizowane zależności",
+        "uk": "версія для стабільного випуску\nоновлені залежності",
+        "zh-cn": "稳定版本的版本\n更新的依赖关系"
+      },
       "0.2.4": {
         "en": "add missing descriptions to DeviceInfo and BMSInfo states\nremove placeholder desc \"-\" from states without a meaningful description\nremove unused Rtc field from GoodWeRunningData type\nupdated dependencies",
         "de": "Fehlende Beschreibungen zu den Zuständen DeviceInfo und BMSInfo hinzufügen\nPlatzhalter \"-\" aus Zuständen ohne aussagekräftige Beschreibung entfernen\nEntferne das ungenutzte Rtc-Feld aus dem Datentyp GoodWeRunningData\naktualisierte Abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "Adapter wymaga teraz uprawnień administratora >= 7.8.23.\nprzebudowano na TypeScript\nulepszony rdzeń adaptera\ndodane jednostki\nnaprawiono ostrzeżenia repoChecker",
         "uk": "Адаптер тепер вимагає адміністратора версії >= 7.8.23.\nперероблено на TypeScript\nоновлений адаптер-ядро\nдодані одиниці\nвиправлені попередження repoChecker",
         "zh-cn": "适配器现在需要管理员版本 >= 7.8.23。\n重构为 TypeScript\n升级后的适配器核心\n新增单位\n修复了 repoChecker 警告"
-      },
-      "0.0.1": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版",
-        "uk": "початковий випуск"
       }
     },
     "titleLang": {
