@@ -1,4 +1,4 @@
-![Logo](admin/goodwe-pv.png)
+<img src="admin/goodwe-pv.png" alt="Logo" width="240">
 
 # iobroker.goodwe-pv
 
