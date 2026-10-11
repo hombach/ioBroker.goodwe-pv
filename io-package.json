@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "goodwe-pv",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "news": {
+      "1.0.1": {
+        "en": "switch to iobroker testing 6.x\nadded node 26 tests\nupdated dependencies",
+        "de": "zu iobroker test 6.x wechseln\nNode 26 Tests hinzugefügt\nNeue Abhängigkeiten",
+        "ru": "перейти к тестированию iobroker 6.x\nдобавлен узел 26 тестов\nобновленные зависимости",
+        "pt": "vá para o teste iobroker 6.x\nadicionou testes\nnovas dependências",
+        "nl": "overschakelen naar iobroker testing 6.x\nKnooppunt 26 tests toegevoegd\nbijgewerkte afhankelijkheden",
+        "fr": "passer à iobroker testing 6.x\najout de 26 tests\ndépendances mises à jour",
+        "it": "passare a iobroker testing 6.x\naggiunto nodo 26\ndipendenze aggiornate",
+        "es": "cambiar a iobroker testing 6.x\nañadió nodo 26 pruebas\ndependencias actualizadas",
+        "pl": "przejdź do testowania iobroker 6.x\ndodano testy węzła 26\nzaktualizowane zależności",
+        "uk": "переключитися на тестування іоброкера 6.x\nдодано вузол 26 тестів\nоновлені залежності",
+        "zh-cn": "切换到 iobroker 测试 6.x\n添加了节点 26 测试\n更新的依赖关系"
+      },
       "1.0.0": {
         "en": "version for stable release\nupdated dependencies",
         "de": "Version für Stable Release\nNeue Abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "dodane jednostki\nzastąp zależności testowe chai/sinon-chai węzłem:assert\nnapraw błąd rootDir programu Test Runner TS5011\nusuń zbędne zależności devDependencies mocha/@types/mocha (już uwzględnione w @iobroker/testing)",
         "uk": "додані одиниці\nзамінити тестові залежності chai/sinon-chai на node:assert\nвиправити помилку rootDir у тестовому виконавці TS5011\nвидалити зайві devDependencies mocha/@types/mocha (вже включені в @iobroker/testing)",
         "zh-cn": "新增单位\n将 chai/sinon-chai 测试依赖项替换为 node:assert\n修复测试运行器 TS5011 根目录错误\n移除冗余的 mocha/@types/mocha 开发依赖项（已包含在 @iobroker/testing 中）"
-      },
-      "0.1.0": {
-        "en": "Adapter requires admin >= 7.8.23 now.\nrefactored to TypeScript\nupgraded adapter-core\nadded units\nfixed repoChecker warnings",
-        "de": "Der Adapter benötigt jetzt Administratorrechte ab Version 7.8.23.\nUmstrukturierung zu TypeScript\naufgerüsteter Adapterkern\nhinzugefügte Einheiten\nrepoChecker-Warnungen behoben",
-        "ru": "Для работы адаптера теперь требуется версия admin >= 7.8.23.\nпереработан с использованием TypeScript.\nмодернизированный адаптер-ядро\nдобавленные единицы\nИсправлены предупреждения repoChecker",
-        "pt": "O adaptador agora requer o admin versão >= 7.8.23.\nRefatorado para TypeScript\nnúcleo do adaptador atualizado\nunidades adicionadas\nAvisos do repoChecker corrigidos",
-        "nl": "De adapter vereist nu admin >= 7.8.23.\ngeherstructureerd naar TypeScript\nverbeterde adapterkern\ntoegevoegde eenheden\nrepoChecker-waarschuwingen opgelost",
-        "fr": "L'adaptateur nécessite désormais une version d'administrateur supérieure ou égale à 7.8.23.\nrefactorisé en TypeScript\ncarte réseau améliorée\nunités ajoutées\nAvertissements de repoChecker corrigés",
-        "it": "L'adattatore ora richiede admin >= 7.8.23.\nrifattorizzato in TypeScript\nadattatore-core aggiornato\nunità aggiunte\nRisolti gli avvisi di repoChecker",
-        "es": "El adaptador ahora requiere admin >= 7.8.23.\nrefactorizado a TypeScript\nnúcleo del adaptador actualizado\nunidades añadidas\nSe corrigieron las advertencias de repoChecker.",
-        "pl": "Adapter wymaga teraz uprawnień administratora >= 7.8.23.\nprzebudowano na TypeScript\nulepszony rdzeń adaptera\ndodane jednostki\nnaprawiono ostrzeżenia repoChecker",
-        "uk": "Адаптер тепер вимагає адміністратора версії >= 7.8.23.\nперероблено на TypeScript\nоновлений адаптер-ядро\nдодані одиниці\nвиправлені попередження repoChecker",
-        "zh-cn": "适配器现在需要管理员版本 >= 7.8.23。\n重构为 TypeScript\n升级后的适配器核心\n新增单位\n修复了 repoChecker 警告"
       }
     },
     "titleLang": {

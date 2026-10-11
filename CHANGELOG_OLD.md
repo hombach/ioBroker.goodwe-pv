@@ -11,6 +11,15 @@
 [![NPM](https://nodei.co/npm/iobroker.goodwe-pv.png?downloads=true)](https://nodei.co/npm/iobroker.goodwe-pv/)
 
 ## Changelog - OLD CHANGES
+## 0.2.1 (2026-07-12)
+
+- (hombach) add GoodWe manufacturer link to README
+- (hombach) remove debug code (checkPasswordAsync/checkGroupAsync) from onReady
+- (hombach) disable unused onStateChange handler (no writable states)
+- (hombach) add runtime validation for pollCycle config parameter
+- (hombach) expose DerateFlag as ioBroker state in RunningData
+- (hombach) fix UTF-8 encoding corruption in all i18n translation files
+
 ## 0.2.0 (2026-07-05)
 
 - (hombach) added units

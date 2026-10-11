@@ -66,8 +66,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.0.1 (2026-10-11)
 
 - (hombach) switch to iobroker testing 6.x
 - (hombach) added node 26 tests
@@ -97,15 +96,6 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 - (hombach) fix PowerFactor scaling: signed int / 1000 instead of uint / 100
 - (hombach) fix TotalReactivePower sign: use signed int (VAR can be negative)
 - (hombach) fix EnergyTotalSell/Buy unit: GM3000 meter float is in Wh, divide by 1000
-
-### 0.2.1 (2026-07-12)
-
-- (hombach) add GoodWe manufacturer link to README
-- (hombach) remove debug code (checkPasswordAsync/checkGroupAsync) from onReady
-- (hombach) disable unused onStateChange handler (no writable states)
-- (hombach) add runtime validation for pollCycle config parameter
-- (hombach) expose DerateFlag as ioBroker state in RunningData
-- (hombach) fix UTF-8 encoding corruption in all i18n translation files
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 
