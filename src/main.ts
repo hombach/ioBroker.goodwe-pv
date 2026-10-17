@@ -2,7 +2,7 @@
 
 import * as utils from "@iobroker/adapter-core";
 
-import { getBatteryModeText, getWorkModeText, GoodWeDiagStatusBits } from "./lib/goodWeTypes.js";
+import { getBatteryModeText, getWorkModeText, GoodWeBmsErrorBits, GoodWeBmsWarningBits, GoodWeDiagStatusBits } from "./lib/goodWeTypes.js";
 import { GoodWeUdp } from "./lib/goodWeUdp.js";
 import { ProjectUtils } from "./lib/projectUtils.js";
 
@@ -260,6 +260,13 @@ class Goodwe extends utils.Adapter {
 		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SOC`, bms.SOC, `State of Charge`, `%`, `value.battery`);
 		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SOH`, bms.SOH, `State of Health`, `%`);
 		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.BatteryStrings`, bms.BatteryStrings, `Battery Strings`);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.WarningCode`, bms.WarningCode, `Warning Code`);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.Protocol`, bms.Protocol, `Battery Protocol`);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.ErrorCodeH`, bms.ErrorCodeH, `Error Code High`);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.WarningCodeH`, bms.WarningCodeH, `Warning Code High`);
+		void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SoftwareVersion`, bms.SoftwareVersion, `BMS Software Version`);
+		await this.projectUtils.updateBitmap(`BMSInfo.Errors`, bms.ErrorCode, GoodWeBmsErrorBits);
+		await this.projectUtils.updateBitmap(`BMSInfo.Warnings`, bms.WarningCode, GoodWeBmsWarningBits);
 	}
 
 	/**
@@ -273,7 +280,7 @@ class Goodwe extends utils.Adapter {
 	 *   cycle 1 → device info  (firmware versions, rated power — static data)
 	 *   cycle 3 → running data (PV strings, grid phases, battery, energy counters)
 	 *   cycle 5 → ext-com data (smart meter readings)
-	 *   cycle 7 → BMS info     (battery state, SOC/SOH)
+	 *   cycle 7 → BMS info     (battery state, SOC/SOH, errors/warnings)
 	 *
 	 * The cycle counter resets to 0 once it reaches config.pollCycle, so the
 	 * effective update rate for each data group is pollCycle seconds.

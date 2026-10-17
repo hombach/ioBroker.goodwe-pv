@@ -196,6 +196,13 @@ class Goodwe extends utils.Adapter {
         void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SOC`, bms.SOC, `State of Charge`, `%`, `value.battery`);
         void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SOH`, bms.SOH, `State of Health`, `%`);
         void this.projectUtils.checkAndSetValueNumber(`BMSInfo.BatteryStrings`, bms.BatteryStrings, `Battery Strings`);
+        void this.projectUtils.checkAndSetValueNumber(`BMSInfo.WarningCode`, bms.WarningCode, `Warning Code`);
+        void this.projectUtils.checkAndSetValueNumber(`BMSInfo.Protocol`, bms.Protocol, `Battery Protocol`);
+        void this.projectUtils.checkAndSetValueNumber(`BMSInfo.ErrorCodeH`, bms.ErrorCodeH, `Error Code High`);
+        void this.projectUtils.checkAndSetValueNumber(`BMSInfo.WarningCodeH`, bms.WarningCodeH, `Warning Code High`);
+        void this.projectUtils.checkAndSetValueNumber(`BMSInfo.SoftwareVersion`, bms.SoftwareVersion, `BMS Software Version`);
+        await this.projectUtils.updateBitmap(`BMSInfo.Errors`, bms.ErrorCode, goodWeTypes_js_1.GoodWeBmsErrorBits);
+        await this.projectUtils.updateBitmap(`BMSInfo.Warnings`, bms.WarningCode, goodWeTypes_js_1.GoodWeBmsWarningBits);
     }
     myTimer() {
         if (!this.inverter.Status) {
