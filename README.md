@@ -71,6 +71,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 
 - (hombach) fixed repoChecker warnings
 - (hombach) updated dependencies
+- (hombach) add battery mode as text (RunningData.Battery1.ModeText)
 
 ### 1.0.1 (2026-10-11)
 
