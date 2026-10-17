@@ -195,3 +195,23 @@ export const GoodWeBatteryModes: Record<number, string> = {
 export function getBatteryModeText(mode: number): string {
 	return GoodWeBatteryModes[mode] ?? `${mode}`;
 }
+
+/** Inverter work modes (run state) of register 35187, see marcelblijleven/goodwe WORK_MODES_ET. */
+export const GoodWeWorkModes: Record<number, string> = {
+	0: "Wait Mode",
+	1: "Normal (On-Grid)",
+	2: "Normal (Off-Grid)",
+	3: "Fault Mode",
+	4: "Flash Mode",
+	5: "Check Mode",
+};
+
+/**
+ * Returns the text for an inverter work mode (register 35187).
+ *
+ * @param mode - Raw work mode value
+ * @returns Mode text, or the number as string for unknown values
+ */
+export function getWorkModeText(mode: number): string {
+	return GoodWeWorkModes[mode] ?? `${mode}`;
+}

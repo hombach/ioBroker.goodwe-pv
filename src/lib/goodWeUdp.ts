@@ -331,7 +331,7 @@ export class GoodWeUdp {
 			this.client.once("message", rcvbuf => {
 				if (this.checkRecRegisterData(rcvbuf, sendbuf[1], sendbuf[5])) {
 					this.bmsInfo.Status = this.getUintFromByteArray(rcvbuf, 5, 2);
-					this.bmsInfo.PackTemperature = this.getUintFromByteArray(rcvbuf, 7, 2) / 10;
+					this.bmsInfo.PackTemperature = this.getIntFromByteArray(rcvbuf, 7, 2) / 10; // 37003, signed
 					this.bmsInfo.CurrentMaxCharge = this.getUintFromByteArray(rcvbuf, 9, 2);
 					this.bmsInfo.CurrentMaxDischarge = this.getUintFromByteArray(rcvbuf, 11, 2);
 					this.bmsInfo.ErrorCode = this.getUintFromByteArray(rcvbuf, 13, 2);
@@ -426,12 +426,12 @@ export class GoodWeUdp {
 	 * @param data Source buffer
 	 * @param start Start byte offset
 	 * @param length Number of bytes to read (1–4)
-	 * @returns Unsigned integer value
+	 * @returns Unsigned integer value (also for 4-byte values with bit 31 set)
 	 */
 	private getUintFromByteArray(data: Buffer, start: number, length: number): number {
 		let value = 0;
 		for (let i = 0; i < length; i++) {
-			value = (value << 8) + data[start + i];
+			value = value * 256 + data[start + i]; // no "<< 8": JS bit shifts are signed 32-bit
 		}
 		return value;
 	}

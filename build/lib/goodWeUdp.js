@@ -295,7 +295,7 @@ class GoodWeUdp {
             this.client.once("message", rcvbuf => {
                 if (this.checkRecRegisterData(rcvbuf, sendbuf[1], sendbuf[5])) {
                     this.bmsInfo.Status = this.getUintFromByteArray(rcvbuf, 5, 2);
-                    this.bmsInfo.PackTemperature = this.getUintFromByteArray(rcvbuf, 7, 2) / 10;
+                    this.bmsInfo.PackTemperature = this.getIntFromByteArray(rcvbuf, 7, 2) / 10;
                     this.bmsInfo.CurrentMaxCharge = this.getUintFromByteArray(rcvbuf, 9, 2);
                     this.bmsInfo.CurrentMaxDischarge = this.getUintFromByteArray(rcvbuf, 11, 2);
                     this.bmsInfo.ErrorCode = this.getUintFromByteArray(rcvbuf, 13, 2);
@@ -357,7 +357,7 @@ class GoodWeUdp {
     getUintFromByteArray(data, start, length) {
         let value = 0;
         for (let i = 0; i < length; i++) {
-            value = (value << 8) + data[start + i];
+            value = value * 256 + data[start + i];
         }
         return value;
     }
