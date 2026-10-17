@@ -331,7 +331,7 @@ export class GoodWeUdp {
 			this.client.once("message", rcvbuf => {
 				if (this.checkRecRegisterData(rcvbuf, sendbuf[1], sendbuf[5])) {
 					this.bmsInfo.Status = this.getUintFromByteArray(rcvbuf, 5, 2);
-					this.bmsInfo.PackTemperature = this.getUintFromByteArray(rcvbuf, 7, 2) / 10;
+					this.bmsInfo.PackTemperature = this.getIntFromByteArray(rcvbuf, 7, 2) / 10; // 37003, signed
 					this.bmsInfo.CurrentMaxCharge = this.getUintFromByteArray(rcvbuf, 9, 2);
 					this.bmsInfo.CurrentMaxDischarge = this.getUintFromByteArray(rcvbuf, 11, 2);
 					this.bmsInfo.ErrorCode = this.getUintFromByteArray(rcvbuf, 13, 2);
