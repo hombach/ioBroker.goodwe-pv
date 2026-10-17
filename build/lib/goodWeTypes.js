@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GoodWeBatteryModes = exports.GoodweBmsInfo = exports.GoodWeExternalComData = exports.GoodWeMeterPhase = exports.GoodWeRunningData = exports.AcPhaseBackup = exports.AcPhase = exports.DcParameters = exports.GoodWeDeviceInfo = exports.GoodWeIdInfo = exports.GoodWeRegister = exports.GoodWePacket = void 0;
+exports.GoodWeWorkModes = exports.GoodWeBatteryModes = exports.GoodweBmsInfo = exports.GoodWeExternalComData = exports.GoodWeMeterPhase = exports.GoodWeRunningData = exports.AcPhaseBackup = exports.AcPhase = exports.DcParameters = exports.GoodWeDeviceInfo = exports.GoodWeIdInfo = exports.GoodWeRegister = exports.GoodWePacket = void 0;
 exports.getBatteryModeText = getBatteryModeText;
+exports.getWorkModeText = getWorkModeText;
 class GoodWePacket {
     static Format = { Packet: 7, Checksum: 2 };
     static Header = { High: 0xaa, Low: 0x55 };
@@ -179,5 +180,16 @@ exports.GoodWeBatteryModes = {
 };
 function getBatteryModeText(mode) {
     return exports.GoodWeBatteryModes[mode] ?? `${mode}`;
+}
+exports.GoodWeWorkModes = {
+    0: "Wait Mode",
+    1: "Normal (On-Grid)",
+    2: "Normal (Off-Grid)",
+    3: "Fault Mode",
+    4: "Flash Mode",
+    5: "Check Mode",
+};
+function getWorkModeText(mode) {
+    return exports.GoodWeWorkModes[mode] ?? `${mode}`;
 }
 //# sourceMappingURL=goodWeTypes.js.map

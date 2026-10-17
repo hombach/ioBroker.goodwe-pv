@@ -139,6 +139,7 @@ class Goodwe extends utils.Adapter {
         void this.projectUtils.checkAndSetValueNumber(`RunningData.WarningCode`, rd.WarningCode, `Warning Code`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.SaftyCountry`, rd.SaftyCountry, `Safety Country`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.WorkMode`, rd.WorkMode, `Work Mode`);
+        void this.projectUtils.checkAndSetValue(`RunningData.WorkModeText`, (0, goodWeTypes_js_1.getWorkModeText)(rd.WorkMode), `Work Mode (35187)`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.OperationMode`, rd.OperationMode, `Operation Mode`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.ErrorMessage`, rd.ErrorMessage, `Error Message`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.PvEnergyTotal`, rd.PvEnergyTotal, `PV Energy Total`, `kWh`, `value.energy.produced`);
