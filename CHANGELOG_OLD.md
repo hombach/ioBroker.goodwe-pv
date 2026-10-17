@@ -11,6 +11,13 @@
 [![NPM](https://nodei.co/npm/iobroker.goodwe-pv.png?downloads=true)](https://nodei.co/npm/iobroker.goodwe-pv/)
 
 ## Changelog - OLD CHANGES
+## 0.2.2 (2026-07-12)
+
+- (hombach) assign semantic ioBroker roles to many states
+- (hombach) fix PowerFactor scaling: signed int / 1000 instead of uint / 100
+- (hombach) fix TotalReactivePower sign: use signed int (VAR can be negative)
+- (hombach) fix EnergyTotalSell/Buy unit: GM3000 meter float is in Wh, divide by 1000
+
 ## 0.2.1 (2026-07-12)
 
 - (hombach) add GoodWe manufacturer link to README

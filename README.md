@@ -66,8 +66,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.1.0 (2026-10-17)
 
 - (hombach) fixed repoChecker warnings
 - (hombach) updated dependencies
@@ -102,13 +101,6 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 - (hombach) replace deprecated role value.power.consumption with value.energy.consumed
 - (hombach) replace value.power.produced with value.energy.produced for accumulated kWh states
 - (hombach) replace invalid roles value.power.apparent and value.signal with valid alternatives
-
-### 0.2.2 (2026-07-12)
-
-- (hombach) assign semantic ioBroker roles to many states
-- (hombach) fix PowerFactor scaling: signed int / 1000 instead of uint / 100
-- (hombach) fix TotalReactivePower sign: use signed int (VAR can be negative)
-- (hombach) fix EnergyTotalSell/Buy unit: GM3000 meter float is in Wh, divide by 1000
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 
