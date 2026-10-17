@@ -175,3 +175,23 @@ export class GoodweBmsInfo {
 	SOH = 0;
 	BatteryStrings = 0;
 }
+
+/** Battery modes of register 35184, see marcelblijleven/goodwe BATTERY_MODES. */
+export const GoodWeBatteryModes: Record<number, string> = {
+	0: "No battery",
+	1: "Standby",
+	2: "Discharge",
+	3: "Charge",
+	4: "To be charged",
+	5: "To be discharged",
+};
+
+/**
+ * Returns the text for a battery mode (register 35184).
+ *
+ * @param mode - Raw battery mode value
+ * @returns Mode text, or the number as string for unknown values
+ */
+export function getBatteryModeText(mode: number): string {
+	return GoodWeBatteryModes[mode] ?? `${mode}`;
+}

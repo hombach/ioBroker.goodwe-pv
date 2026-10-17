@@ -2,6 +2,7 @@
 
 import * as utils from "@iobroker/adapter-core";
 
+import { getBatteryModeText } from "./lib/goodWeTypes.js";
 import { GoodWeUdp } from "./lib/goodWeUdp.js";
 import { ProjectUtils } from "./lib/projectUtils.js";
 
@@ -172,6 +173,7 @@ class Goodwe extends utils.Adapter {
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.BusVoltage`, rd.BusVoltage, `Bus Voltage`, `V`, `value.voltage`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.NbusVoltage`, rd.NbusVoltage, `Nbus Voltage`, `V`, `value.voltage`);
 		await this.projectUtils.updateDcParameters(`RunningData`, `Battery1`, rd.Battery1.Voltage, rd.Battery1.Current, rd.Battery1.Power, rd.Battery1.Mode);
+		void this.projectUtils.checkAndSetValue(`RunningData.Battery1.ModeText`, getBatteryModeText(rd.Battery1.Mode), `Battery Mode (35184)`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.WarningCode`, rd.WarningCode, `Warning Code`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.SaftyCountry`, rd.SaftyCountry, `Safety Country`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.WorkMode`, rd.WorkMode, `Work Mode`);
