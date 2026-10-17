@@ -426,12 +426,12 @@ export class GoodWeUdp {
 	 * @param data Source buffer
 	 * @param start Start byte offset
 	 * @param length Number of bytes to read (1–4)
-	 * @returns Unsigned integer value
+	 * @returns Unsigned integer value (also for 4-byte values with bit 31 set)
 	 */
 	private getUintFromByteArray(data: Buffer, start: number, length: number): number {
 		let value = 0;
 		for (let i = 0; i < length; i++) {
-			value = (value << 8) + data[start + i];
+			value = value * 256 + data[start + i]; // no "<< 8": JS bit shifts are signed 32-bit
 		}
 		return value;
 	}
