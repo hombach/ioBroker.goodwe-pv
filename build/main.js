@@ -162,6 +162,7 @@ class Goodwe extends utils.Adapter {
         void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFrozenPower`, rd.DerateFrozenPower, `Derate Frozen Power`, `W`, `value.power`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusH`, rd.DiagStatusH, `Diag Status H`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusL`, rd.DiagStatusL, `Diag Status L`);
+        await this.projectUtils.updateBitmap(`RunningData.DiagStatus`, rd.DiagStatusL, goodWeTypes_js_1.GoodWeDiagStatusBits);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.TotalPowerPv`, rd.TotalPowerPv, `Total Power PV`, `W`, `value.power`);
     }
     async updateExtComData() {

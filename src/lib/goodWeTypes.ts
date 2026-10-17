@@ -215,3 +215,37 @@ export const GoodWeWorkModes: Record<number, string> = {
 export function getWorkModeText(mode: number): string {
 	return GoodWeWorkModes[mode] ?? `${mode}`;
 }
+
+/** Bit names of DiagStatusL (registers 35220-35221), see marcelblijleven/goodwe DIAG_STATUS_CODES. */
+export const GoodWeDiagStatusBits: Record<number, string> = {
+	0: "BatteryVoltageLow",
+	1: "BatterySocLow",
+	2: "BatterySocInBack",
+	3: "BmsDischargeDisabled",
+	4: "DischargeTimeOn",
+	5: "ChargeTimeOn",
+	6: "DischargeDriverOn",
+	7: "BmsDischargeCurrentLow",
+	8: "AppDischargeCurrentTooLow",
+	9: "MeterCommunicationFailure",
+	10: "MeterConnectionReversed",
+	11: "SelfUseLoadLight",
+	12: "EmsDischargeCurrentZero",
+	13: "DischargeBusHighPvVoltage",
+	14: "BatteryDisconnected",
+	15: "BatteryOvercharged",
+	16: "BmsTemperatureTooHigh",
+	17: "BmsChargeTooHigh",
+	18: "BmsChargeDisabled",
+	19: "SelfUseOff",
+	20: "SocDeltaTooVolatile",
+	21: "BatterySelfDischargeTooHigh",
+	22: "BatterySocLowOffGrid",
+	23: "GridWaveUnstable",
+	24: "ExportPowerLimitSet",
+	25: "PfValueSet",
+	26: "RealPowerLimitSet",
+	27: "DcOutputOn",
+	28: "SocProtectOff",
+	30: "BmsEmergencyCharging",
+};

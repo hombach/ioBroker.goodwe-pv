@@ -1,6 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProjectUtils = void 0;
+exports.isBitSet = isBitSet;
+exports.getActiveBits = getActiveBits;
+function isBitSet(value, bit) {
+    return ((value >>> bit) & 1) === 1;
+}
+function getActiveBits(value, bits) {
+    return Object.entries(bits)
+        .filter(([bit]) => isBitSet(value, Number(bit)))
+        .map(([, name]) => name);
+}
 class ProjectUtils {
     adapter;
     constructor(adapter) {
@@ -32,6 +42,14 @@ class ProjectUtils {
         await this.checkAndSetChannel(`${parent}.${name}`, name);
         void this.checkAndSetValueNumber(`${parent}.${name}.ActivePower`, activePower, `Active Power`, `W`, `value.power`);
         void this.checkAndSetValueNumber(`${parent}.${name}.PowerFactor`, powerFactor, `Power Factor`);
+    }
+    async updateBitmap(parent, value, bits) {
+        await this.checkAndSetChannel(parent, parent.split(".").pop());
+        for (const [bit, name] of Object.entries(bits)) {
+            await this.checkAndSetValueBoolean(`${parent}.${name}`, isBitSet(value, Number(bit)), `Bit ${bit}`);
+        }
+        const active = getActiveBits(value, bits);
+        await this.checkAndSetValue(`${parent}.ActiveText`, active.length ? active.join(", ") : "-", `Active bits`);
     }
     async getStateValue(stateName) {
         try {

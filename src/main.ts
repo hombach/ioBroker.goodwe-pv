@@ -2,7 +2,7 @@
 
 import * as utils from "@iobroker/adapter-core";
 
-import { getBatteryModeText, getWorkModeText } from "./lib/goodWeTypes.js";
+import { getBatteryModeText, getWorkModeText, GoodWeDiagStatusBits } from "./lib/goodWeTypes.js";
 import { GoodWeUdp } from "./lib/goodWeUdp.js";
 import { ProjectUtils } from "./lib/projectUtils.js";
 
@@ -218,6 +218,7 @@ class Goodwe extends utils.Adapter {
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.DerateFrozenPower`, rd.DerateFrozenPower, `Derate Frozen Power`, `W`, `value.power`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusH`, rd.DiagStatusH, `Diag Status H`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.DiagStatusL`, rd.DiagStatusL, `Diag Status L`);
+		await this.projectUtils.updateBitmap(`RunningData.DiagStatus`, rd.DiagStatusL, GoodWeDiagStatusBits);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.TotalPowerPv`, rd.TotalPowerPv, `Total Power PV`, `W`, `value.power`);
 	}
 

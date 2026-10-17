@@ -1,6 +1,30 @@
 import type * as utils from "@iobroker/adapter-core";
 
 /**
+ * Checks whether a bit is set in a 32-bit value (safe for bit 31 and for values decoded as signed int32).
+ *
+ * @param value - Bitmap value
+ * @param bit - Bit number (0-31)
+ * @returns True if the bit is set
+ */
+export function isBitSet(value: number, bit: number): boolean {
+	return ((value >>> bit) & 1) === 1;
+}
+
+/**
+ * Returns the names of all known bits that are set in a bitmap value, ordered by bit number.
+ *
+ * @param value - Bitmap value
+ * @param bits - Map of bit number to bit name
+ * @returns Names of the active bits
+ */
+export function getActiveBits(value: number, bits: Record<number, string>): string[] {
+	return Object.entries(bits)
+		.filter(([bit]) => isBitSet(value, Number(bit)))
+		.map(([, name]) => name);
+}
+
+/**
  * ProjectUtils
  */
 export class ProjectUtils {
@@ -83,6 +107,22 @@ export class ProjectUtils {
 		await this.checkAndSetChannel(`${parent}.${name}`, name);
 		void this.checkAndSetValueNumber(`${parent}.${name}.ActivePower`, activePower, `Active Power`, `W`, `value.power`);
 		void this.checkAndSetValueNumber(`${parent}.${name}.PowerFactor`, powerFactor, `Power Factor`);
+	}
+
+	/**
+	 * Updates (creates if not exists) a channel with one boolean state per known bit and an ActiveText state.
+	 *
+	 * @param parent - Channel path (e.g. "RunningData.DiagStatus")
+	 * @param value - Bitmap value
+	 * @param bits - Map of bit number to state name
+	 */
+	async updateBitmap(parent: string, value: number, bits: Record<number, string>): Promise<void> {
+		await this.checkAndSetChannel(parent, parent.split(".").pop());
+		for (const [bit, name] of Object.entries(bits)) {
+			await this.checkAndSetValueBoolean(`${parent}.${name}`, isBitSet(value, Number(bit)), `Bit ${bit}`);
+		}
+		const active = getActiveBits(value, bits);
+		await this.checkAndSetValue(`${parent}.ActiveText`, active.length ? active.join(", ") : "-", `Active bits`);
 	}
 
 	/**

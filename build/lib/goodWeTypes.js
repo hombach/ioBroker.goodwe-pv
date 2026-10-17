@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GoodWeWorkModes = exports.GoodWeBatteryModes = exports.GoodweBmsInfo = exports.GoodWeExternalComData = exports.GoodWeMeterPhase = exports.GoodWeRunningData = exports.AcPhaseBackup = exports.AcPhase = exports.DcParameters = exports.GoodWeDeviceInfo = exports.GoodWeIdInfo = exports.GoodWeRegister = exports.GoodWePacket = void 0;
+exports.GoodWeDiagStatusBits = exports.GoodWeWorkModes = exports.GoodWeBatteryModes = exports.GoodweBmsInfo = exports.GoodWeExternalComData = exports.GoodWeMeterPhase = exports.GoodWeRunningData = exports.AcPhaseBackup = exports.AcPhase = exports.DcParameters = exports.GoodWeDeviceInfo = exports.GoodWeIdInfo = exports.GoodWeRegister = exports.GoodWePacket = void 0;
 exports.getBatteryModeText = getBatteryModeText;
 exports.getWorkModeText = getWorkModeText;
 class GoodWePacket {
@@ -192,4 +192,36 @@ exports.GoodWeWorkModes = {
 function getWorkModeText(mode) {
     return exports.GoodWeWorkModes[mode] ?? `${mode}`;
 }
+exports.GoodWeDiagStatusBits = {
+    0: "BatteryVoltageLow",
+    1: "BatterySocLow",
+    2: "BatterySocInBack",
+    3: "BmsDischargeDisabled",
+    4: "DischargeTimeOn",
+    5: "ChargeTimeOn",
+    6: "DischargeDriverOn",
+    7: "BmsDischargeCurrentLow",
+    8: "AppDischargeCurrentTooLow",
+    9: "MeterCommunicationFailure",
+    10: "MeterConnectionReversed",
+    11: "SelfUseLoadLight",
+    12: "EmsDischargeCurrentZero",
+    13: "DischargeBusHighPvVoltage",
+    14: "BatteryDisconnected",
+    15: "BatteryOvercharged",
+    16: "BmsTemperatureTooHigh",
+    17: "BmsChargeTooHigh",
+    18: "BmsChargeDisabled",
+    19: "SelfUseOff",
+    20: "SocDeltaTooVolatile",
+    21: "BatterySelfDischargeTooHigh",
+    22: "BatterySocLowOffGrid",
+    23: "GridWaveUnstable",
+    24: "ExportPowerLimitSet",
+    25: "PfValueSet",
+    26: "RealPowerLimitSet",
+    27: "DcOutputOn",
+    28: "SocProtectOff",
+    30: "BmsEmergencyCharging",
+};
 //# sourceMappingURL=goodWeTypes.js.map
