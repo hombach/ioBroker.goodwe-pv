@@ -46,6 +46,8 @@
 	"exclude": ["build/**", "node_modules/**"],
 	"ts-node": {
 		"transpileOnly": true,
-		"files": true
+		"files": true,
+		// resolve "./x.js" imports to "./x.ts" when running tests
+		"experimentalResolver": true
 	}
 }

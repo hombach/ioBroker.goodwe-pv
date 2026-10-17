@@ -207,7 +207,7 @@ class GoodWeUdp {
                     this.runningData.EnergyBatteryCharge = this.getUintFromByteArray(rcvbuf, 217, 4) / 10;
                     this.runningData.EnergyDayCharge = this.getUintFromByteArray(rcvbuf, 221, 2) / 10;
                     this.runningData.EnergyBatteryDischarge = this.getUintFromByteArray(rcvbuf, 223, 4) / 10;
-                    this.runningData.EnergyDayDischarge = this.getUintFromByteArray(rcvbuf, 227, 4) / 10;
+                    this.runningData.EnergyDayDischarge = this.getUintFromByteArray(rcvbuf, 227, 2) / 10;
                     this.runningData.BatteryStrings = this.getUintFromByteArray(rcvbuf, 229, 2);
                     this.runningData.CpldWarningCode = this.getUintFromByteArray(rcvbuf, 231, 2);
                     this.runningData.WChargeCtrFlag = this.getUintFromByteArray(rcvbuf, 233, 2);
