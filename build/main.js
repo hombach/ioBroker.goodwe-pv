@@ -33,6 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 const utils = __importStar(require("@iobroker/adapter-core"));
+const goodWeTypes_js_1 = require("./lib/goodWeTypes.js");
 const goodWeUdp_js_1 = require("./lib/goodWeUdp.js");
 const projectUtils_js_1 = require("./lib/projectUtils.js");
 class Goodwe extends utils.Adapter {
@@ -134,6 +135,7 @@ class Goodwe extends utils.Adapter {
         void this.projectUtils.checkAndSetValueNumber(`RunningData.BusVoltage`, rd.BusVoltage, `Bus Voltage`, `V`, `value.voltage`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.NbusVoltage`, rd.NbusVoltage, `Nbus Voltage`, `V`, `value.voltage`);
         await this.projectUtils.updateDcParameters(`RunningData`, `Battery1`, rd.Battery1.Voltage, rd.Battery1.Current, rd.Battery1.Power, rd.Battery1.Mode);
+        void this.projectUtils.checkAndSetValue(`RunningData.Battery1.ModeText`, (0, goodWeTypes_js_1.getBatteryModeText)(rd.Battery1.Mode), `Battery Mode (35184)`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.WarningCode`, rd.WarningCode, `Warning Code`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.SaftyCountry`, rd.SaftyCountry, `Safety Country`);
         void this.projectUtils.checkAndSetValueNumber(`RunningData.WorkMode`, rd.WorkMode, `Work Mode`);
