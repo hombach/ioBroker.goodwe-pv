@@ -174,6 +174,11 @@ export class GoodweBmsInfo {
 	SOC = 0;
 	SOH = 0;
 	BatteryStrings = 0;
+	WarningCode = 0;
+	Protocol = 0;
+	ErrorCodeH = 0;
+	WarningCodeH = 0;
+	SoftwareVersion = 0;
 }
 
 /** Battery modes of register 35184, see marcelblijleven/goodwe BATTERY_MODES. */
@@ -248,4 +253,40 @@ export const GoodWeDiagStatusBits: Record<number, string> = {
 	27: "DcOutputOn",
 	28: "SocProtectOff",
 	30: "BmsEmergencyCharging",
+};
+
+/** Bit names of the BMS error code (register 37006), see marcelblijleven/goodwe BMS_ALARM_CODES. */
+export const GoodWeBmsErrorBits: Record<number, string> = {
+	0: "ChargingOverVoltage2",
+	1: "DischargingUnderVoltage2",
+	2: "CellTemperatureHigh2",
+	3: "CellTemperatureLow2",
+	4: "ChargingOverCurrent2",
+	5: "DischargingOverCurrent2",
+	6: "PrechargeFault",
+	7: "DcBusFault",
+	8: "BatteryBreak",
+	9: "BatteryLock",
+	10: "DischargingCircuitFailure",
+	11: "ChargingCircuitFailure",
+	12: "CommunicationFailure2",
+	13: "CellTemperatureHigh3",
+	14: "DischargingUnderVoltage3",
+	15: "ChargingOverVoltage3",
+};
+
+/** Bit names of the BMS warning code (register 37010), see marcelblijleven/goodwe BMS_WARNING_CODES. */
+export const GoodWeBmsWarningBits: Record<number, string> = {
+	0: "ChargingOverVoltage1",
+	1: "DischargingUnderVoltage1",
+	2: "CellTemperatureHigh1",
+	3: "CellTemperatureLow1",
+	4: "ChargingOverCurrent1",
+	5: "DischargingOverCurrent1",
+	6: "CommunicationFailure1",
+	7: "SystemReboot",
+	8: "CellImbalance",
+	9: "SystemTemperatureLow1",
+	10: "SystemTemperatureLow2",
+	11: "SystemTemperatureHigh",
 };

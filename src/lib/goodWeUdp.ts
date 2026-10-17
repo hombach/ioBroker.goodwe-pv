@@ -318,10 +318,10 @@ export class GoodWeUdp {
 
 		sendbuf[0] = GoodWeRegister.Addr.Inverter;
 		sendbuf[1] = GoodWeRegister.FcDode.Read;
-		sendbuf[2] = 0x90;
+		sendbuf[2] = 0x90; // 37002 = 0x908A
 		sendbuf[3] = 0x8a;
 		sendbuf[4] = 0x00;
-		sendbuf[5] = 0x08;
+		sendbuf[5] = 0x0d; // 13 registers: 37002-37014
 
 		const crc = this.calculateCrc16(sendbuf, 0, 6);
 		sendbuf[6] = crc >> 8;
@@ -338,6 +338,11 @@ export class GoodWeUdp {
 					this.bmsInfo.SOC = this.getUintFromByteArray(rcvbuf, 15, 2);
 					this.bmsInfo.SOH = this.getUintFromByteArray(rcvbuf, 17, 2);
 					this.bmsInfo.BatteryStrings = this.getUintFromByteArray(rcvbuf, 19, 2);
+					this.bmsInfo.WarningCode = this.getUintFromByteArray(rcvbuf, 21, 2); // 37010
+					this.bmsInfo.Protocol = this.getUintFromByteArray(rcvbuf, 23, 2); // 37011
+					this.bmsInfo.ErrorCodeH = this.getUintFromByteArray(rcvbuf, 25, 2); // 37012
+					this.bmsInfo.WarningCodeH = this.getUintFromByteArray(rcvbuf, 27, 2); // 37013
+					this.bmsInfo.SoftwareVersion = this.getUintFromByteArray(rcvbuf, 29, 2); // 37014
 					this.status = GoodWeUdp.ConStatus.Online;
 				} else {
 					this.status = GoodWeUdp.ConStatus.Offline;

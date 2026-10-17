@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GoodWeDiagStatusBits = exports.GoodWeWorkModes = exports.GoodWeBatteryModes = exports.GoodweBmsInfo = exports.GoodWeExternalComData = exports.GoodWeMeterPhase = exports.GoodWeRunningData = exports.AcPhaseBackup = exports.AcPhase = exports.DcParameters = exports.GoodWeDeviceInfo = exports.GoodWeIdInfo = exports.GoodWeRegister = exports.GoodWePacket = void 0;
+exports.GoodWeBmsWarningBits = exports.GoodWeBmsErrorBits = exports.GoodWeDiagStatusBits = exports.GoodWeWorkModes = exports.GoodWeBatteryModes = exports.GoodweBmsInfo = exports.GoodWeExternalComData = exports.GoodWeMeterPhase = exports.GoodWeRunningData = exports.AcPhaseBackup = exports.AcPhase = exports.DcParameters = exports.GoodWeDeviceInfo = exports.GoodWeIdInfo = exports.GoodWeRegister = exports.GoodWePacket = void 0;
 exports.getBatteryModeText = getBatteryModeText;
 exports.getWorkModeText = getWorkModeText;
 class GoodWePacket {
@@ -168,6 +168,11 @@ class GoodweBmsInfo {
     SOC = 0;
     SOH = 0;
     BatteryStrings = 0;
+    WarningCode = 0;
+    Protocol = 0;
+    ErrorCodeH = 0;
+    WarningCodeH = 0;
+    SoftwareVersion = 0;
 }
 exports.GoodweBmsInfo = GoodweBmsInfo;
 exports.GoodWeBatteryModes = {
@@ -223,5 +228,37 @@ exports.GoodWeDiagStatusBits = {
     27: "DcOutputOn",
     28: "SocProtectOff",
     30: "BmsEmergencyCharging",
+};
+exports.GoodWeBmsErrorBits = {
+    0: "ChargingOverVoltage2",
+    1: "DischargingUnderVoltage2",
+    2: "CellTemperatureHigh2",
+    3: "CellTemperatureLow2",
+    4: "ChargingOverCurrent2",
+    5: "DischargingOverCurrent2",
+    6: "PrechargeFault",
+    7: "DcBusFault",
+    8: "BatteryBreak",
+    9: "BatteryLock",
+    10: "DischargingCircuitFailure",
+    11: "ChargingCircuitFailure",
+    12: "CommunicationFailure2",
+    13: "CellTemperatureHigh3",
+    14: "DischargingUnderVoltage3",
+    15: "ChargingOverVoltage3",
+};
+exports.GoodWeBmsWarningBits = {
+    0: "ChargingOverVoltage1",
+    1: "DischargingUnderVoltage1",
+    2: "CellTemperatureHigh1",
+    3: "CellTemperatureLow1",
+    4: "ChargingOverCurrent1",
+    5: "DischargingOverCurrent1",
+    6: "CommunicationFailure1",
+    7: "SystemReboot",
+    8: "CellImbalance",
+    9: "SystemTemperatureLow1",
+    10: "SystemTemperatureLow2",
+    11: "SystemTemperatureHigh",
 };
 //# sourceMappingURL=goodWeTypes.js.map

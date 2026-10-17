@@ -1,6 +1,6 @@
 import assert from "node:assert";
 
-import { GoodWeDiagStatusBits } from "./goodWeTypes";
+import { GoodWeBmsErrorBits, GoodWeBmsWarningBits, GoodWeDiagStatusBits } from "./goodWeTypes";
 import { getActiveBits, isBitSet } from "./projectUtils";
 
 describe("projectUtils => isBitSet", () => {
@@ -27,5 +27,13 @@ describe("projectUtils => getActiveBits", () => {
 		assert.deepStrictEqual(getActiveBits(0, GoodWeDiagStatusBits), []);
 		assert.deepStrictEqual(getActiveBits(2 ** 29, GoodWeDiagStatusBits), []);
 		assert.deepStrictEqual(getActiveBits(2 ** 30, GoodWeDiagStatusBits), ["BmsEmergencyCharging"]);
+	});
+});
+
+describe("projectUtils => getActiveBits (BMS)", () => {
+	it("should decode BMS error and warning bitmaps", () => {
+		assert.deepStrictEqual(getActiveBits(0x8101, GoodWeBmsErrorBits), ["ChargingOverVoltage2", "BatteryBreak", "ChargingOverVoltage3"]);
+		assert.deepStrictEqual(getActiveBits(0x0880, GoodWeBmsWarningBits), ["SystemReboot", "SystemTemperatureHigh"]);
+		assert.deepStrictEqual(getActiveBits(0xf000, GoodWeBmsWarningBits), []);
 	});
 });

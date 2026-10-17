@@ -77,6 +77,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 - (hombach) add work mode as text (RunningData.WorkModeText)
 - (hombach) read BMS PackTemperature as signed value
 - (hombach) decode DiagStatusL bits into RunningData.DiagStatus
+- (hombach) read extended BMS info (37010-37014) and decode BMS error/warning bits
 
 ### 1.0.1 (2026-10-11)
 

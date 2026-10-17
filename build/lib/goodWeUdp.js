@@ -287,7 +287,7 @@ class GoodWeUdp {
         sendbuf[2] = 0x90;
         sendbuf[3] = 0x8a;
         sendbuf[4] = 0x00;
-        sendbuf[5] = 0x08;
+        sendbuf[5] = 0x0d;
         const crc = this.calculateCrc16(sendbuf, 0, 6);
         sendbuf[6] = crc >> 8;
         sendbuf[7] = crc & 0x00ff;
@@ -302,6 +302,11 @@ class GoodWeUdp {
                     this.bmsInfo.SOC = this.getUintFromByteArray(rcvbuf, 15, 2);
                     this.bmsInfo.SOH = this.getUintFromByteArray(rcvbuf, 17, 2);
                     this.bmsInfo.BatteryStrings = this.getUintFromByteArray(rcvbuf, 19, 2);
+                    this.bmsInfo.WarningCode = this.getUintFromByteArray(rcvbuf, 21, 2);
+                    this.bmsInfo.Protocol = this.getUintFromByteArray(rcvbuf, 23, 2);
+                    this.bmsInfo.ErrorCodeH = this.getUintFromByteArray(rcvbuf, 25, 2);
+                    this.bmsInfo.WarningCodeH = this.getUintFromByteArray(rcvbuf, 27, 2);
+                    this.bmsInfo.SoftwareVersion = this.getUintFromByteArray(rcvbuf, 29, 2);
                     this.status = GoodWeUdp.ConStatus.Online;
                 }
                 else {
