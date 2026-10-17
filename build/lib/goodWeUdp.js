@@ -357,7 +357,7 @@ class GoodWeUdp {
     getUintFromByteArray(data, start, length) {
         let value = 0;
         for (let i = 0; i < length; i++) {
-            value = (value << 8) + data[start + i];
+            value = value * 256 + data[start + i];
         }
         return value;
     }
