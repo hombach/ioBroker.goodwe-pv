@@ -73,6 +73,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 - (hombach) updated dependencies
 - (hombach) fix 4-byte unsigned values with bit 31 set
 - (hombach) add battery mode as text (RunningData.Battery1.ModeText)
+- (hombach) fix EnergyDayDischarge (35211) read as 2 bytes
 - (hombach) add work mode as text (RunningData.WorkModeText)
 - (hombach) read BMS PackTemperature as signed value
 - (hombach) decode DiagStatusL bits into RunningData.DiagStatus
