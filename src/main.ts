@@ -2,7 +2,7 @@
 
 import * as utils from "@iobroker/adapter-core";
 
-import { getBatteryModeText } from "./lib/goodWeTypes.js";
+import { getBatteryModeText, getWorkModeText } from "./lib/goodWeTypes.js";
 import { GoodWeUdp } from "./lib/goodWeUdp.js";
 import { ProjectUtils } from "./lib/projectUtils.js";
 
@@ -177,6 +177,7 @@ class Goodwe extends utils.Adapter {
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.WarningCode`, rd.WarningCode, `Warning Code`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.SaftyCountry`, rd.SaftyCountry, `Safety Country`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.WorkMode`, rd.WorkMode, `Work Mode`);
+		void this.projectUtils.checkAndSetValue(`RunningData.WorkModeText`, getWorkModeText(rd.WorkMode), `Work Mode (35187)`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.OperationMode`, rd.OperationMode, `Operation Mode`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.ErrorMessage`, rd.ErrorMessage, `Error Message`);
 		void this.projectUtils.checkAndSetValueNumber(`RunningData.PvEnergyTotal`, rd.PvEnergyTotal, `PV Energy Total`, `kWh`, `value.energy.produced`);
