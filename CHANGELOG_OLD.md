@@ -11,6 +11,12 @@
 [![NPM](https://nodei.co/npm/iobroker.goodwe-pv.png?downloads=true)](https://nodei.co/npm/iobroker.goodwe-pv/)
 
 ## Changelog - OLD CHANGES
+## 0.2.3 (2026-07-18)
+
+- (hombach) replace deprecated role value.power.consumption with value.energy.consumed
+- (hombach) replace value.power.produced with value.energy.produced for accumulated kWh states
+- (hombach) replace invalid roles value.power.apparent and value.signal with valid alternatives
+
 ## 0.2.2 (2026-07-12)
 
 - (hombach) assign semantic ioBroker roles to many states
